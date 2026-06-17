@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>观音灵签</title>
+<style>﻿*{margin:0;padding:0;box-sizing:border-box}:root{--r:#A42B2B;--c:#F7F4ED;--cd:#EDE8DD;--k:#2B2B2B;--kl:#555;--g:#5D7C64;--o:#C9A86A;--w:#FAF9F6;--s:rgba(43,43,43,0.08)}body{font-family:"Noto Serif CJK SC","STSong",serif;background:var(--c);color:var(--k);min-height:100vh;overflow-x:hidden;line-height:1.8}body::before{content:"";position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 10%,rgba(197,168,106,0.04)0%,transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(93,124,100,0.03)0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(164,43,43,0.02)0%,transparent 70%);pointer-events:none;z-index:0}
+.page{display:none;position:relative;z-index:1;min-height:100vh;animation:fi .8s ease}.page.act{display:block}@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+#ph{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;text-align:center}
+.hl{font-size:clamp(36px,8vw,56px);color:var(--r);letter-spacing:12px;margin-bottom:8px;font-weight:600}.hs{font-size:clamp(13px,2.5vw,16px);color:var(--kl);letter-spacing:6px;margin-bottom:48px;line-height:2}.hd{width:40px;height:1px;background:var(--o);margin:0 auto 48px}.bp{display:inline-block;margin-top:36px;padding:14px 48px;background:var(--r);color:var(--w);border:none;border-radius:4px;font-family:inherit;font-size:16px;letter-spacing:6px;cursor:pointer;transition:all .3s}.bp:hover{background:#8A1F1F}
+.hf{position:fixed;bottom:24px;display:flex;gap:24px;font-size:13px;color:var(--kl);z-index:2}.hf a{color:var(--kl);text-decoration:none;letter-spacing:2px;cursor:pointer;transition:color .3s}.hf a:hover{color:var(--r)}
+.rs{display:none;flex-direction:column;align-items:center;gap:24px;animation:fi 1s ease}.rs.act{display:flex}.rt{font-size:clamp(20px,4vw,28px);color:var(--k);letter-spacing:6px;line-height:2}.rc{font-size:48px;color:var(--r);letter-spacing:4px;margin:20px 0}.rb{padding:16px 48px;background:transparent;color:var(--r);border:1px solid var(--r);border-radius:4px;font-family:inherit;font-size:15px;letter-spacing:4px;cursor:pointer;transition:all .3s;margin-top:16px}.rb:hover{background:var(--r);color:var(--w)}
+.sc{position:relative;width:120px;height:200px;margin:40px auto;cursor:pointer}.sc.shk{animation:shk 1.5s ease-in-out}@keyframes shk{0%,100%{transform:rotate(0)}10%{transform:rotate(-3deg)}20%{transform:rotate(4deg)}30%{transform:rotate(-5deg)}40%{transform:rotate(6deg)}50%{transform:rotate(-6deg)}60%{transform:rotate(5deg)}70%{transform:rotate(-4deg)}80%{transform:rotate(3deg)}90%{transform:rotate(-2deg)}}
+.scyl{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:100px;background:linear-gradient(180deg,#8B4513,#A0522D 30%,#8B4513 60%,#6B3410);border-radius:6px 6px 3px 3px}
+.st{position:absolute;bottom:50px;width:4px;height:100px;background:linear-gradient(to top,#D4A574,#C4945C);border-radius:2px;transform-origin:bottom center}.st:nth-child(1){left:35%;height:95px;transform:translateX(-50%)rotate(-8deg)}.st:nth-child(2){left:50%;height:100px;transform:translateX(-50%)rotate(2deg)}.st:nth-child(3){left:65%;height:90px;transform:translateX(-50%)rotate(7deg)}
+.srn{font-size:72px;color:var(--r);letter-spacing:8px;margin-top:24px;animation:inks 1.5s ease}@keyframes inks{0%{opacity:0;transform:scale(0.5);filter:blur(8px)}50%{opacity:0.7;transform:scale(1.1);filter:blur(0)}100%{opacity:1;transform:scale(1);filter:blur(0)}}
+#pr{display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:40px 24px 180px}#pr.act{display:flex}#prs{padding:60px 20px 120px;max-width:680px;margin:0 auto}#prs.act{display:block}
+.rn{font-size:28px;color:var(--r);letter-spacing:6px;margin-bottom:4px}.rl{display:inline-block;padding:4px 20px;border-radius:2px;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+.rl.sg{background:rgba(164,43,43,0.08);color:var(--r);border:1px solid var(--r)}.rl.zg{background:rgba(93,124,100,0.08);color:var(--g);border:1px solid var(--g)}.rl.xg{background:rgba(43,43,43,0.05);color:var(--kl);border:1px solid var(--kl)}
+.tbs{display:flex;border-bottom:1px solid var(--cd);margin-bottom:28px}.tb{flex:1;padding:12px 8px;background:none;border:none;font-family:inherit;font-size:14px;color:var(--kl);letter-spacing:3px;cursor:pointer;transition:all .3s;border-bottom:2px solid transparent}.tb.act{color:var(--r);border-bottom-color:var(--r)}.tc{display:none;animation:fi .5s ease}.tc.act{display:block}
+.pp{background:var(--w);padding:32px 24px;border-radius:2px;box-shadow:0 2px 12px var(--s);position:relative}.pp:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--r),var(--o),var(--r));opacity:0.6}
+.jt{font-size:17px;line-height:2.2;color:var(--k);letter-spacing:1px;text-align:center;padding:20px 0}.is{margin-bottom:24px}.il{font-size:12px;color:var(--o);letter-spacing:4px;margin-bottom:8px;display:flex;align-items:center;gap:8px}.il::after{content:"";flex:1;height:1px;background:var(--cd)}.ib{font-size:14px;color:var(--kl);line-height:2;letter-spacing:1px}.itg{display:inline-block;padding:4px 16px;font-size:13px;letter-spacing:4px;border-radius:2px;margin-bottom:12px}.tdj{background:rgba(164,43,43,0.1);color:var(--r);border:1px solid var(--r)}.tj{background:rgba(93,124,100,0.1);color:var(--g);border:1px solid var(--g)}.tzp{background:rgba(201,168,106,0.1);color:#8B7A4A;border:1px solid var(--o)}
+.scd{background:var(--w);border:1px solid var(--cd);padding:24px;margin-bottom:20px;border-radius:2px}.sct{font-size:16px;color:var(--k);letter-spacing:3px;margin-bottom:8px}.scb{font-size:14px;color:var(--kl);line-height:2;letter-spacing:1px}.sch{font-size:13px;color:var(--g);letter-spacing:2px;margin-top:12px;padding-top:12px;border-top:1px solid var(--cd)}
+.rq{text-align:center;margin-top:48px;padding:24px 0;border-top:1px solid var(--cd);font-size:14px;color:var(--kl);letter-spacing:2px;line-height:2}.rq em{font-style:normal;color:var(--r)}.ra{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}.bs{padding:10px 24px;background:transparent;color:var(--kl);border:1px solid var(--cd);border-radius:4px;font-family:inherit;font-size:13px;letter-spacing:2px;cursor:pointer;transition:all .3s}.bs:hover{border-color:var(--r);color:var(--r)}.bs.sv{border-color:var(--o);color:var(--o)}
+.qi{width:100%;max-width:400px;padding:14px 20px;background:var(--w);border:1px solid var(--cd);border-radius:4px;font-family:inherit;font-size:15px;color:var(--k);text-align:center;outline:none;transition:border-color .3s;letter-spacing:1px}.qi:focus{border-color:var(--r)}.ql{font-size:15px;color:var(--kl);margin-bottom:16px;letter-spacing:2px}.ex{font-size:12px;color:#bbb;margin-top:8px;letter-spacing:1px}
+#pd{padding:60px 20px 120px;max-width:560px;margin:0 auto}#pd.act{display:block}.ddt{font-size:14px;color:var(--kl);letter-spacing:3px;margin-bottom:4px}.dti{font-size:22px;color:var(--r);letter-spacing:6px}.dcd{background:var(--w);padding:32px 24px;box-shadow:0 2px 12px var(--s);border-radius:2px;text-align:center}.dn{font-size:48px;color:var(--r);letter-spacing:8px;margin-bottom:8px}.dnm{font-size:16px;color:var(--k);letter-spacing:4px;margin-bottom:16px}.dl{width:40px;height:1px;background:var(--o);margin:16px auto}.drm{font-size:14px;color:var(--kl);line-height:2;letter-spacing:2px}
+#pc{padding:60px 20px 120px;max-width:640px;margin:0 auto}#pc.act{display:block}.cti{font-size:22px;color:var(--k);letter-spacing:6px}.cem{text-align:center;padding:48px 20px;color:var(--kl);font-size:14px;letter-spacing:2px;line-height:2}.ci{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--w);margin-bottom:8px;border-radius:2px;box-shadow:0 1px 4px var(--s);cursor:pointer;transition:all .2s}.cin{font-size:18px;color:var(--r);letter-spacing:2px;min-width:60px;flex:0 0 100px}
+#ph2{padding:60px 20px 120px;max-width:640px;margin:0 auto}#ph2.act{display:block}.hti{font-size:22px;color:var(--k);letter-spacing:6px}.hem{text-align:center;padding:48px 20px;color:var(--kl);font-size:14px;letter-spacing:2px;line-height:2}.hi{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--w);margin-bottom:6px;border-radius:2px;box-shadow:0 1px 3px var(--s);font-size:13px;color:var(--kl);letter-spacing:1px;cursor:pointer}.hin{color:var(--r);min-width:50px}
+.tn{position:fixed;top:0;left:0;right:0;z-index:100;display:none;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--w);border-bottom:1px solid var(--cd)}.tn.vs{display:flex}.tnb{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:20px;color:var(--k);cursor:pointer}.tnt{font-size:15px;letter-spacing:4px;color:var(--k)}.tni{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:16px;color:var(--kl);cursor:pointer;letter-spacing:2px}
+.bn{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;background:var(--w);border-top:1px solid var(--cd);padding:8px 0;padding-bottom:max(8px,env(safe-area-inset-bottom))}.bni{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:none;font-family:inherit;font-size:11px;color:var(--kl);letter-spacing:2px;cursor:pointer;padding:4px 0}.bni.act{color:var(--r)}
+.stp{position:fixed;bottom:80px;right:16px;width:40px;height:40px;background:var(--w);border:1px solid var(--cd);border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:var(--kl);font-size:18px;z-index:50;box-shadow:0 2px 8px var(--s)}.stp.vs{display:flex}.stp:hover{color:var(--r)}
+.toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);background:var(--k);color:var(--w);padding:12px 32px;border-radius:4px;font-size:14px;letter-spacing:2px;z-index:300;opacity:0;pointer-events:none;transition:all .3s}.toast.sh{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.lo{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--c);display:none;align-items:center;justify-content:center;z-index:200;flex-direction:column;gap:16px}.lo.act{display:flex}.lt{font-size:16px;color:var(--kl);letter-spacing:4px}
+.ld{width:6px;height:6px;background:var(--r);border-radius:50%;animation:lp 1.2s infinite ease-in-out}.ld:nth-child(2){animation-delay:.2s}.ld:nth-child(3){animation-delay:.4s}@keyframes lp{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.2)}}
+.seal{position:fixed;pointer-events:none;z-index:0;opacity:0.04}.seal-tr{top:20px;right:30px;width:80px;height:80px;border:2px solid var(--r);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--r);transform:rotate(5deg);writing-mode:vertical-rl;letter-spacing:4px}
+.seal-bl{bottom:30px;left:20px;width:60px;height:60px;border:2px solid var(--k);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--k);transform:rotate(-8deg);writing-mode:vertical-rl;letter-spacing:3px;opacity:0.03}
+@media(min-width:768px){#pr{display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:40px 24px 180px}#pr.act{display:flex}#prs{padding:80px 40px 100px}.pp{padding:40px 36px}}@media(max-width:480px){.hl{letter-spacing:8px}.bp{padding:14px 36px;font-size:15px}.srn{font-size:56px}}
+.rr-card{margin-top:32px;animation:fi .8s ease;text-align:center;width:100%;background:var(--w);padding:28px 24px;border-radius:4px;box-shadow:0 2px 16px rgba(43,43,43,0.06)}.rr-number{font-size:36px;color:var(--r);letter-spacing:8px;margin-bottom:8px}.rr-level{display:inline-block;padding:4px 16px;border-radius:2px;font-size:13px;letter-spacing:4px;margin-bottom:10px}.rr-level.sg{background:rgba(164,43,43,0.08);color:var(--r);border:1px solid var(--r)}.rr-level.zg{background:rgba(93,124,100,0.08);color:var(--g);border:1px solid var(--g)}.rr-level.xg{background:rgba(43,43,43,0.05);color:var(--kl);border:1px solid var(--kl)}.rr-name{font-size:18px;color:var(--k);letter-spacing:4px;margin-bottom:8px}.rr-jiwen{font-size:15px;line-height:2.2;color:var(--k);letter-spacing:1px;margin:12px 0;text-align:center}.rr-jieyue{font-size:13px;color:var(--kl);line-height:2;text-align:center;margin-top:4px}.rr-actions{margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}</style>
+</head>
+<body>
+<div class="lo" id="lo"><div style="display:flex;gap:8px"><div class="ld"></div><div class="ld"></div><div class="ld"></div></div><div class="lt">观音灵签</div></div>
+<div class="toast" id="toast"></div>
+<div class="seal seal-tr">灵签</div>
+<div class="seal seal-bl">心诚</div>
+<nav class="tn" id="tn"><button class="tnb" id="nb">&#x2190;</button><div class="tnt" id="nt">观音灵签</div><div class="tna"><button class="tni" id="nc">&#x2661;</button></div></nav>
+<div class="page act" id="ph">
+<div class="hl">观音灵签</div><div class="hs">心诚则灵<br>但签只照见内心</div><div class="hd"></div>
+<button class="bp" id="sb">净手问签</button>
+<div class="hf"><a id="gd">每日一签</a><a id="gh">抽签记录</a><a id="gc">我的签库</a></div></div>
+<div class="page" id="pr">
+<div class="rs act" id="rs1"><div class="rt">请静心</div><div class="rbb"></div><div class="rsb">放下杂念，归于当下</div><button class="rb" id="rn1">我已静心</button></div>
+<div class="rs" id="rs2"><div class="rt">点击签筒</div><div class="rbb"></div><div class="rsb">让灵签为你指引</div>
+<div class="sc" id="sc"><div class="st"></div><div class="st"></div><div class="st"></div><div class="st"></div><div class="st"></div><div class="scyl"></div></div>
+<div id="sr" style="display:none"><div class="srn" id="srn"></div><button class="rb" id="rr">查看签意</button></div>
+<div id="inlineResult" style="display:none"></div></div></div>
+<div class="page" id="prs">
+<div class="rhdr"><div class="rn" id="rn">第XX签</div><div class="rl" id="rl">上签</div><div class="rnm" id="rnm">签题</div></div>
+<div class="tbs"><button class="tb act" data-tab="to">签文</button><button class="tb" data-tab="tm">现代解读</button><button class="tb" data-tab="ts">典故故事</button></div>
+<div class="tc act" id="to"><div class="pp"><div class="jt" id="rj"></div><div class="jp" id="rp"></div><div class="jyt" id="rjy"></div></div></div>
+<div class="tc" id="tm"><div class="pp" id="mi"></div></div>
+<div class="tc" id="ts"><div id="sc2"></div></div>
+<div class="ra"><button class="bs" id="sav">&#x2661; 收藏</button><button class="bs" id="rdw">重新求签</button><button class="bs" id="shr">分享</button></div>
+<div class="rq">签可指路，<br>却不能替你行路。<br><em>愿你既知天时，<br>亦能尽人事。</em></div></div>
+<div class="page" id="pd"><div class="dhd"><div class="ddt" id="ddt"></div><div class="dti">今日签语</div></div>
+<div class="dcd"><div class="dn" id="dn"></div><div class="dnm" id="dnm"></div><div class="dl"></div><div class="drm" id="drm"></div></div>
+<div style="text-align:center;margin-top:24px"><button class="rb" id="ddtl">查看详解</button></div></div>
+<div class="page" id="pc"><div class="cht"><div class="cti">我的签库</div></div><div id="cl"></div></div>
+<div class="page" id="ph2"><div class="hht"><div class="hti">抽签记录</div></div><div id="hl"></div></div>
+<nav class="bn" id="bn">
+<button class="bni act" data-p="home"><span class="bni-icon">&#x2302;</span><span>首页</span></button>
+<button class="bni" data-p="daily"><span class="bni-icon">&#x2606;</span><span>每日一签</span></button>
+<button class="bni" data-p="history"><span class="bni-icon">&#x2630;</span><span>记录</span></button>
+<button class="bni" data-p="collection"><span class="bni-icon">&#x2661;</span><span>签库</span></button></nav>
+<button class="stp" id="stp">&#x2191;</button>
+
+<script>
+
+const D=[{"id": 1, "level": "上签", "palace": "子宫", "name": "钟离成道", "jiwen": "开天辟地作良缘，吉日良时万物全；若得此签非小可，人行忠正帝王宣。", "poem": "此卦盘古初开天地之象。诸事皆吉也。", "jieyue": "急速兆速。年未值时。观音降笔。先报君知。", "story": "山中宰相之典故其实应该是六朝『陶弘景』，他是茅山派祖师之一，梁武帝在位时曾任官，後弃官入焦山（在茅山不远处）修道，梁武帝多次召见皆辞，武帝无奈只好以书信往来请益治理之道，时谓『山中宰相』，武帝曾好奇于信中问起山中修道之事，陶弘景作诗一首覆之，其诗曰：『山中何所有？岭上多白云，只堪自愉悦，不堪持赠君』。陶弘景亦擅书法，今留存者有焦山『瘗鹤铭』，刻凿於临水山壁，原有三百馀字，历两次为雷击中坠入江中，又称『雷打石』，後枯水时露出捞起将之置於山上寺庙壁上，但仅馀九十馀字。此铭向被誉为『书家冠冕』，评其书有仙气。"}, {"id": 2, "level": "下签", "palace": "子宫", "name": "苏秦不第", "jiwen": "鲸鱼未变守江河，不可升腾更望高；异日峥嵘身变化，许君一跃跳龙门。", "poem": "此卦鲸鱼未变之象。凡事忍耐待时也。︵高有作闻。︶", "jieyue": "得忍且忍。得耐且耐。须待时至。功名还在。", "story": "战国。苏秦。洛阳人。师鬼谷子。游说秦王。书十二上其说。不行。裘敝金尽。憔悴而归。至家妻不下(织)机。(不理睬其夫)嫂不为炊。(不煮饭给其叔)秦惭怒。得太公阴符。发愤苦读。困怠时用锥刺股。痛而再读。後以合从(合纵)之说。联六国抗秦。说赵竟佩六国相印。"}, {"id": 3, "level": "下签", "palace": "子宫", "name": "董永遇仙", "jiwen": "临风冒雨去还乡，正是其身似燕儿；衔得坭来欲作垒，到头垒坏复须坭。", "poem": "此卦燕子衔坭之象。凡事劳心费力也。", "jieyue": "千般用计。晨昏不停。谁知此事。到底劳心。■", "story": "︵董永遇仙︶汉。董永。千乘人。少失母。独养父。流寓孝感。父亡无以葬。乃从人贷钱一万。日後无钱还。当以身作奴。葬毕。道遇一妇人。求为永妻。永与俱诘。钱主令织缣(锦)三百疋以偿。一月而毕。辞永去。乃曰。我(系)天上织女。缘君至孝。玉帝令我助君偿债。言讫。凌空而去。︵董永卖身︶汉。董永。千乘人。少失母。独养父。流寓孝感。父亡无以葬。乃从人贷钱一万。日後无钱还。当以身作奴。葬毕。其主要董永日取柴一担。汲水四担。锄田六七亩。辛苦难当。一日上山砍柴倦睡。皇天见其孝行。即差仙女下凡为婚。董永醒来见女恐是妖精。女拦曰吾无父母又无依。欲结为夫妇。董永见其凄凉。带女回归。主人责董永拐带妇人祸及其主。後暂留该女。遍访四方家庭并无失妇人。才允成亲。董妇百日织得锦五十丈。剪一半往市卖出得银。赎脱董永身。後将锦进。敕封进宝状元。仙姬曰。天赐儿子三岁送还。(仙女回天)。後其子十六岁中状元。衣锦还乡。"}, {"id": 4, "level": "上签", "palace": "子宫", "name": "玉莲会十朋", "jiwen": "千年古镜复重圆，女再求夫男再婚；自此门庭重改换，更添福禄在儿孙。", "poem": "此卦串镜重圆之象。凡事劳心有贵也。", "jieyue": "淘沙成金。骑龙踏虎。虽是劳心。于中有补。", "story": "荆录记。宋朝。钱玉莲与王十朋结婚。十朋上京赴考。孙汝权逼玉莲相嫁。玉莲投河自杀获救。十朋中状元。拒娶丞相之女为妻。二人几经波折。夫妻始复团圆。"}, {"id": 5, "level": "中签", "palace": "丑宫", "name": "刘晨遇仙", "jiwen": "一锥草地要求泉，努力求之得最难；无意俄然遇知己，相逢携手上青天。", "poem": "此卦锥地求泉之象。凡事先难后易也。", "jieyue": "欲望心事。西方可求。不如莫动。立地可谋。", "story": "东汉。刘晨和阮肇国二人入山采药。遇二仙女。招至成亲。半年後二人回家。怎知至家已过百年。无人认识二人。二人返山找仙女。终不可得。喻有心花开花不发。无心插柳柳成荫。"}, {"id": 6, "level": "中签", "palace": "丑宫", "name": "仁贵遇主", "jiwen": "投身岩下铜鸟居，须是还他大丈夫；拾得营谋谁可得，通行天地此人无。", "poem": "此卦投岩铜鸟︵雕本作铜；大本作女。及早本作拾早。︶之象。凡事宜顺吉之兆。", "jieyue": "食用无鱼。身清喜贫。待时利乐。权与概人。", "story": "唐朝。薛仁贵三次投军。只任伙头。唐太宗(李世民)被盖苏追杀。危急之中。得仁贵救。即被唐太宗封为元帅。带兵东征。累立战功。"}, {"id": 7, "level": "下签", "palace": "丑宫", "name": "苏娘走难", "jiwen": "奔波阻隔重重险，带水拖坭去度山；更望他乡求用事，千乡万里未回还。", "poem": "此卦拖坭带水之象。凡事守旧则吉也。", "jieyue": "退身可得。进步为难。只宜守旧。莫望高扳。", "story": "周朝景王时。皇后苏英。善与鹦鹉对话。遭西宫梅玉春陷害。潘葛之妻代后受刑。娘娘逃至白马寺。腹痛产子。喻谁无逆境。随遇而安可也。"}, {"id": 8, "level": "上签", "palace": "丑宫", "name": "姚能遇仙", "jiwen": "茂林松柏正兴旺，雨雪风霜总莫为；异日忽然成大用，功名成就栋梁材。", "poem": "此卦此卦松柏茂林之象。凡事有贵气也。", "jieyue": "路上亨通。终身有功。田蚕丰熟。家道兴隆。", "story": ""}, {"id": 9, "level": "中签", "palace": "寅宫", "name": "孔明点将", "jiwen": "烦君勿作私心事，此意偏宜说问公；一片明心光皎洁，宛如皎月正天心。", "poem": "此卦皎月当空之象。凡事光明通气也。︵说同悦。︶", "jieyue": "心中正直。理顺法宽。圣无私语。终有分明。", "story": "︵孔明点将︶即诸葛亮。三国时。刘备三顾草庐。出任军师。曹操大将夏侯惇领兵来攻。孔明升帐。调兵点将。于博望坡败曹军。︵三顾草庐︶汉。诸葛亮。字孔明。琅琊人。汉末避居南阳。志学清修。养生之道。研究奇明(门)遁法。天文术数。卦算韬略。无所不精。初不求闻达於诸侯。後徐庶荐於刘先生。先主凡三往问计。延为军师。先主即位。拜丞相。受以托孤。後主封为武卿侯。卒諡忠武。"}, {"id": 10, "level": "中签", "palace": "寅宫", "name": "庞涓观阵", "jiwen": "石藏无价玉和珍，只管他乡外客寻；宛如持灯更觅火，不如收拾枉劳心。", "poem": "此卦持灯觅火之象。凡事待时成就也。︵外客有作外界。︶", "jieyue": "姻缘会遇。何事不成。须无限意。眼前是真。", "story": "战国。孙膑齐人。庞涓魏人。同师事鬼谷子。孙膑之学优於庞涓。涓为魏将。与膑斗智。输而忌之。乃以计刖其足。後孙膑假作颠狂。得脱归。齐威王以(膑)为师。将兵伐魏。庞涓至营地观阵。孙膑用减灶添兵之法。赚庞涓。追至马陵道。伏弩射死。"}, {"id": 11, "level": "上签", "palace": "寅宫", "name": "书荐姜维", "jiwen": "欲求胜事可非常，争奈亲姻日暂忙；到头竟必成鹿箭，贵人指引贵人乡。", "poem": "此卦因祸得福之象。凡事营谋吉利也。︵中箭本作鹿箭。︶", "jieyue": "有意兴变。到底安然。若问用事。只近贵人。", "story": "书荐姜维(书献姜维)三国时。孔明带兵六出祁山。病重命危。将兵书二十四篇。传大将军姜维。望其秉承遗志。"}, {"id": 12, "level": "上签", "palace": "寅宫", "name": "武吉遇师", "jiwen": "否去泰来咫尺间，暂交君子出於山；若逢虎兔佳音信，立志忙中事即闲。", "poem": "此卦祸中有福之象。凡事先凶后吉也。︵击有作系。︶", "jieyue": "换麻得丝。击人双足。要见分明。因灾得福。", "story": "(见于封神榜)武吉本是樵夫。姜子牙钓于磻溪。二人相遇。见子牙用直钩钓鱼大笑。子牙看武吉气息断曰。今日入城打死人。武吉怒别。担柴入城。误触王相致死。文王画地为牢。武吉後被暂释。照顾老母至秋後正法。老母令其找姜子牙求救。太公收其为徒。授兵法。又令其挖坑施咒破解先天数。秋後不见武吉伏刑。文王演先天数。以为武吉已畏罪自杀。後文王碰见武吉。武吉引文王见姜太公。受封武德将军。师徒二人为文王效力。"}, {"id": 13, "level": "中签", "palace": "寅宫", "name": "罗通拜师", "jiwen": "自小生在富贵家，眼前万物总奢华；蒙君赐紫金角带，四海声名定可夸。", "poem": "此卦龙门得通之象。凡事有变大吉也。︵腰带本作角带。有作玉带。︶", "jieyue": "囚人逢赦。病即安然。龙门得遇。名遍名都。", "story": "唐初。罗通十七岁。于校场比武获帅印。领兵北伐扫敌。後触怒唐太宗被免官。获程咬金求情得宽赦。喻少年得志。有成语曰。罗通扫北。"}, {"id": 14, "level": "中签", "palace": "卯宫", "name": "子牙弃官", "jiwen": "宛如仙鹤出凡笼，脱得凡笼路路通；南北东西无阻隔，任君直上九霄宫。", "poem": "此卦仙鹤离笼之象。凡事先凶后吉也。︵凡有作樊。︶", "jieyue": "任意无虞。路有亨通。随心自在。逍遥如人(神)。", "story": "(封神传)商朝纣王时。姜子牙火烧琵琶精後。获司天监职。官拜下大夫。纣王建鹿台。子牙谏王免劳民伤财。不果。逃回宋异人庄(宋家庄)上。欲与妻马氏离朝歌(首府)往西岐(文王首府)。其妻不肯。子牙写了休书。独自往西岐去。"}, {"id": 15, "level": "中签", "palace": "卯宫", "name": "苏秦得志", "jiwen": "行人怨日气难吞，忽有灾事勿近前；鸟破林巢无所宿，可寻深处稳安身。", "poem": "此卦鸟鹊巢(离)林之象。凡事到底应心也。︵跘曰本作(缺字)日；有作一日。巢破林鸟本作鸟破林巢。︶", "jieyue": "若人得怨。何时可伸。好言不信。守旧待时。", "story": "战国。苏秦。洛阳人。师鬼谷子。游说秦王。书十二上其说。不行。裘敝金尽。憔悴而归。至家妻不下(织)机(不理睬其夫) 。嫂不为炊(不煮饭给其叔) 。秦惭怒。得太公阴符。发愤苦读。困怠时用锥刺股。痛而再读。後以合从(合纵)之说。联六国抗秦。说赵竟佩六国相印。"}, {"id": 16, "level": "中签", "palace": "卯宫", "name": "叶梦熊朝帝", "jiwen": "愁眉思虑暂时开，启出云霄喜自来；宛如粪土中藏玉，良工一举出尘埃。", "poem": "此卦阴阳和合之象。凡所谋皆吉也。︵藏玉本作戴玉。荐举本作(缺字)举；有作一举。︶", "jieyue": "得处无失。损中有益。小人逢凶。君子顺吉。", "story": "明朝。嘉靖年进士。万历年间。叶上朝晋见神宗皇帝。求领兵讨伐边寇。"}, {"id": 17, "level": "中签", "palace": "卯宫", "name": "话梅止渴", "jiwen": "莫听闲言说是非，晨昏只好念阿弥；若将狂话为真实，书饼如何止得饥。", "poem": "此卦书饼充饥之象。诸事多虚少实也。︵将本作奖。︶", "jieyue": "心中不定。枉看经文。恰似书饼。食也难吞。", "story": "三国。曹操领兵。败季缺水。兵卒口渴。曹曰前有一梅林。到那当可吃梅解渴。望梅止渴出此。与画饼充饥同意。"}, {"id": 18, "level": "上签", "palace": "卯宫", "name": "曹国舅为仙", "jiwen": "金乌西坠兔东升，日夜循环至古今；僧道得知无不利，士农工商各从心。", "poem": "此卦阴阳消长之象。凡事遂意之兆也。︵金乌指太阳。玉兔指月亮。︶", "jieyue": "心中无事。所作有功。如弓上箭。一发当空。", "story": "八仙之一。宋朝曹太后之弟。後散尽家财。周济穷人。入终南山修道。遇锺离权及吕洞宾。引入仙班。手持玉箫为其标志。"}, {"id": 19, "level": "中签", "palace": "辰宫", "name": "子仪封王", "jiwen": "急水滩头放船归，风波作浪欲何为；若要安然求稳静，等待浪静道此危。", "poem": "此卦船行急滩之象。凡事守旧待时也。", "jieyue": "急水下船。险处待时。若问营谋。尽(不)可施为。︵签诗与", "story": "唐朝大将军。平安禄山和史思明之乱。历七帝。唐肃宗拜为大元帅。封为汾阳郡王。刚八十岁。知有敌侵犯。郭子仪即披挂上阵。八十五卒。"}, {"id": 20, "level": "中签", "palace": "辰宫", "name": "姜太公遇文王", "jiwen": "当春久雨喜开晴，玉兔金乌渐渐明；旧事消散新事遂，看看一跳过龙门。", "poem": "此卦久雨初明之象。凡事遂意也。︵当春本作堂春。玉兔金乌指月亮太阳。︶", "jieyue": "神佛护持。有灾无危。途生平安。到底荣归。", "story": "周。姜尚。字子牙。汲人(东海许州人)。道号飞熊。先世封於吕。亦曰吕望。避纣乱居东海之滨。钓於磻溪(渭水)。其钩为直。意不在鱼。志在君相。文王闻其贤。聘为师(丞相) (其时年八十)。後周伐纣。灭商兴周。武王称曰尚父。封其子丁公於齐。"}, {"id": 21, "level": "上签", "palace": "辰宫", "name": "李旦龙凤配合", "jiwen": "阴阳道合总由天，女嫁男婚喜偎然；但见龙蛇相会合，熊熊入梦喜团圆。", "poem": "此卦阴阳道合之象。凡事和大吉也。︵熊罴入梦本作熊熊人萝。︶", "jieyue": "谋望从心。婚姻孕男。资财进益。更利田蚕。", "story": "李旦为唐睿宗。武则天登基。皇帝贬作平民。流落乡间。巧与胡凤姣相遇。结为夫妇。龙指睿宗。喻婚姻由天也。"}, {"id": 22, "level": "中签", "palace": "", "name": "六郎逢救", "jiwen": "旱时田裏皆枯槁，谢天甘雨落淋淋；花果草木皆润泽，始知一雨值千金。", "poem": "此卦旱逢甘雨之象。凡事难中有救也。︵不便本作便岂。︶", "jieyue": "田蚕倍熟。命运渐来。病遇良药。行人不便。", "story": "杨延昭为杨业之六子。称六郎。杨业统率三军。被番邦围困。杨业头撞李陵碑而亡。杨七郎讨救兵被箭射死。六郎撤退至葫芦谷。得五台山和尚(杨五郎)相救出险。喻及时雨也。"}, {"id": 23, "level": "中签", "palace": "", "name": "怀德招亲", "jiwen": "欲扳仙桂入蟾宫，岂虑天门不任君；忽遇一般音信好，人人皆笑岭顶花。", "poem": "此卦手扳仙桂之象。凡事必有贵人也。︵普开本作普虚。普君有作岂虑天门不任开。人花有作人人欢笑喜庆来。︶", "jieyue": "商贾利益。行戴有(无)危。病安讼遂。尽可施为。", "story": "高怀德乃开国功臣。陈桥兵变。皇袍加身。高怀德拥赵匡胤做皇帝。又娶宋太祖赵匡胤之妹。燕国公主为妻。官封驸马都尉。後领兵与杨家将同征辽国。"}, {"id": 24, "level": "下签", "palace": "", "name": "殷郊遇师", "jiwen": "不成理论不成家，水性痴人似落花；若问君恩须得力，到头方见事如麻。", "poem": "此卦痴人道塞之象。凡事守旧待时也。", "jieyue": "是非莫说。必须仔细。心正理直。方免灾危。", "story": "(封神榜)殷郊是商朝纣王之子。拜广成子为师。三年後学得法术。下山时曾向广成子宣誓。不帮纣王干坏事。往投靠文王。半途受人唆使回家协助纣王。师父往劝。师徒大打出手。後姜子牙合燃灯道人。把殷郊夹于两山之间。被广成子铲死。以应其誓。"}, {"id": 25, "level": "中签", "palace": "", "name": "姚能受职", "jiwen": "过了忧危事几重，从今再立永无空；宽心自有宽心计，得遇高人立大功。", "poem": "此卦古井逢泉之象。凡事贵人成就也。", "jieyue": "讼终有理。病得安全。出入求谋。古井逢泉。", "story": ""}, {"id": 26, "level": "中签", "palace": "", "name": "钟馗得道", "jiwen": "上下传来事转虚，天边接得一封书；书中许我功名遂，直到终时亦是虚。", "poem": "此卦虚名之象。凡事虚多少实宜守旧也。", "jieyue": "上下心烦。求闲不闲。欲望功名。守旧身安。", "story": "姓锺名馗。字正南。中南山人氏。唐时人。上京赴考。得状元。但相丑。豹头环眼。铁面虬须。唐德宗见怕。欲取消其名衔。宰相卢杞附和。锺馗打卢杞。德宗命拿钟馗。钟馗夺剑自杀。陆贽进谏。封为驱魔大神。锺馗以为鬼魔必在地府。遂往斩之。阎君曰：大凡人鬼之分只在方寸间，心正之鬼可为神，心歪之人即为鬼。姓锺大悟。阴间鬼魅有十殿阎君经理。遂返阳间斩妖除魔。成了捉鬼大王。"}, {"id": 27, "level": "中签", "palace": "午宫", "name": "刘基谏主", "jiwen": "一谋一用一番书，虑後思前不敢为；时到贵人相助力，如山墙立可安居。", "poem": "此卦屋好墙壁之象。凡事稳当无险也。", "jieyue": "改旧成新。寒花遇春。从前阻滞。今得称心。", "story": "明朝。青田人。字伯温。通经史。工诗文。精天文兵法。佐朱元璋统一天下。时朱拣领兵往安丰。解除该城之围困。刘基急来劝阻。判断此去必败。如刘基所料。元璋被困。将军徐达及常遇春相救。才得脱险。"}, {"id": 28, "level": "中签", "palace": "午宫", "name": "李后寻包公", "jiwen": "东边月上正蝉娟，顷刻云遮亦暗存；或有圆时还有缺，更言非者亦闲言。", "poem": "此卦月被云遮之象。凡事昏迷未定也。", "jieyue": "浮云遮月。不须疑惑。等待云收。便见明白。", "story": "︵朝野史︶宋李后(妃)为奸佞郭槐所害。所怀太子生後被换貍猫。包公夜审郭槐。寻回李后。真相大白。李后乃宋真宗妃。给刘妃陷害。把貍猫剥皮去尾。调换太子。李后被打入天牢十年。哭泣至失明。出狱後乞食。包公审此案。真相大白。"}, {"id": 29, "level": "中签", "palace": "午宫", "name": "赵子龙救阿斗", "jiwen": "宝剑出匣耀光明，在匣全然不惹尘；今得贵人携出现，有威有势众人钦。", "poem": "此卦宝剑出匣之象。凡事有威有势也。", "jieyue": "宝剑出匣。光辉万里。贵人指引。无不观美。", "story": "三国。赵云。字子龙。常山人。初依袁绍。後从刘(备)先主。时曹操欲下江南。先攻先主於莘野。先主走樊城。复败於当阳。家眷失散。云於土墻下遇縻夫人。夫人将子阿斗托云。云将马授夫人。夫人不肯授。投井而死。云哭埋毕。怀抱阿斗。杀出重围。(阿斗乃刘备之子即刘禅。)"}, {"id": 30, "level": "中签", "palace": "午宫", "name": "棋盘大会", "jiwen": "劝君切莫向他求，似鹤飞来暗箭投；若去采薪蛇在草，恐遭毒口也忧愁。", "poem": "此卦安份守己之象。凡事小心谨防也。", "jieyue": "闭口含齿。他事莫理。若有亏心。到头害己。︵", "story": "唐太宗时。薛仁贵西征被困。仁贵之子薛丁山与其妹往救。至棋盘山。窦一虎劫粮不果。匪妹窦仙童迎战并擒丁山。程咬金做媒。两对兄妹结为夫妇。同往救薛仁贵。喻冤家变亲家。贼匪从良。"}, {"id": 31, "level": "中签", "palace": "未宫", "name": "佛印会东坡", "jiwen": "清闲无忧静处坐，饱後吃茶时坐卧；汝下身心不用忙，必定不招冤与祸。", "poem": "此卦守旧安然之象。凡事时待时则吉也。︵侩同会。︶", "jieyue": "守旧安然。叩问神仙。直待时来。事亦偶然。", "story": "佛印姓谢名端卿。表字觉老。江西饶州府浮梁县人氏。因应举至京。宋神宗因天旱求雨。往大相国寺临坛。谢端卿欲瞻龙颜。东坡允其充作侍者。神宗见捧茶侍者慌忙。问其出处。端卿巧答。皇帝大悦。赐名了元。号佛印。即时披剃为僧。端卿无奈成为和尚。喻人莫无事生事。做事勿慌忙。否则生祸。︵警世恒言十二卷︶谢端卿被逼成为和尚。苏东坡欲以美女色诱佛印。使其还俗。趁佛印酒醉。逼琴娘陪寝。佛印不为所动。并常以佛理晓悟东坡。东坡终成正果。有诗曰。东坡不能化佛印。佛印反得化东坡。若非佛力无边大。那得慈航渡爱河。(爱河指东坡之情欲。其有七位妻妾。)"}, {"id": 32, "level": "中签", "palace": "未宫", "name": "刘备求贤", "jiwen": "前程杳杳定无疑，石中藏玉有谁知；一朝良匠分明剖，始觉安然碧玉期。", "poem": "此卦剖石见玉之象。凡事著力成功也。", "jieyue": "宝在石中。异人少知。直待分明。尽可施为。", "story": "︵刘备求贤︶三国时。诸葛亮隐居于隆中之茅屋。刘备求贤。往访三次才得见孔明。谕有宝心安。得意迟早。静待时机。不请自来。︵三顾草庐︶汉。诸葛亮。字孔明。琅琊人。汉末避居南阳。志学清修。养生之道。研究奇明(门)遁法。天文术数。卦算韬略。无所不精。初不求闻达於诸侯。後徐庶荐於刘先生。先主凡三往问计。延为军师。先主即位。拜丞相。受以托孤。後主封为武卿侯。卒諡忠武。"}, {"id": 33, "level": "中签", "palace": "未宫", "name": "咬金聘仁贵", "jiwen": "内藏无价宝和珍，得玉何须外界寻；不如等待高人识，宽心犹且更宽心。", "poem": "此卦藏玉外寻之象。凡事待时可也。", "jieyue": "内藏金玉。不识外寻。遇贵指引。不须劳心。", "story": "薛仁贵于山上午睡。突见程咬金路过被虎追。仁贵打虎。救了咬金。程咬金给令箭一枝。著仁贵投军。薛仁贵後成唐朝名将。程咬金为唐之开国功臣。喻有宝之人。终有出头之日。"}, {"id": 34, "level": "中签", "palace": "未宫", "name": "桃园结义", "jiwen": "行藏出入礼义恭，言必忠良信必聪；心不了然且静撤，光明红日正当中。", "poem": "此卦红日当空正照之象。凡事遂意也。︵从本作聪，言聪有作矢必忠良志必同。中有作空。︶", "jieyue": "心中无事。秋水澄清。不须疑惑。事自然成。︵", "story": "大丈夫(关公)以四海为家。何患乎吾无兄弟。入桃园。睹两人奇异。请问英雄何处。雄紏紏。朗曰张飞。貌堂堂。温言刘备。出生投地今逢主。须待挽天河水来荡涤。诚哉龙虎风云会。宰牛马昭告天地。结义匡扶汉室。"}, {"id": 35, "level": "中签", "palace": "申宫", "name": "唐僧取经", "jiwen": "衣冠重整旧家风。道是无穹却有功。扫却当途荆棘刺。三人约议再和同。", "poem": "此卦衣冠重整之象。凡事先难后易也。", "jieyue": "不用忧疑。自有佳期。若问前程。前路可宜。", "story": "唐三藏信姓陈名禕。十三岁出家。法号玄奘。往天竺(印度)取经。历尽艰辛。四年始达。学习十五年後返国。携回大量佛经。并译成中文。西游记内述其故事。"}, {"id": 36, "level": "中签", "palace": "申宫", "name": "湘子遇宾(宝)", "jiwen": "眼前病讼不须忧，实地资财尽可求；恰似猿猴金锁脱，自归山洞去来游。", "poem": "此卦猿猴脱锁之象。凡事先难后易也。︵悠字本缺。︶", "jieyue": "脱除了事。且自宽心。待得时来。堪寻正路。", "story": "韩湘子乃八仙之一。其标志为手持花篮。唐朝诗人。姓韩名湘字若云。湘祖名仲卿。父名会。为韩愈之侄。自少学道。吕洞宾度之登仙。号瑶华帝君。"}, {"id": 37, "level": "中签", "palace": "申宫", "name": "李靖归山", "jiwen": "欲待身安运泰时，风中灯烛不相宜；不如收拾深堂坐，庶免光瑶静处明。", "poem": "此卦风摇灯烛之象。凡事守常则吉也。︵动有作运。摇本作瑶。免有作几。︶", "jieyue": "静处安身。待命守时。支惹非福。守旧相宜。", "story": "托塔天王李靖。为封神榜人物。塔能镇魔。李靖父子(哪吒)协姜子牙伐纣兴周。周武王立国初论功行赏。李靖父子辞赏归山修道。喻风云(名利)与灯烛(修道)不相合。欲要得道。须弃名利。两者不可兼得。"}, {"id": 38, "level": "下签", "palace": "申宫", "name": "何文秀遇难", "jiwen": "月照天书静处期，忽遭云雾又昏迷；宽心祈待云霞散，此时更改好施为。", "poem": "此卦云雾遮月之象。凡事未遂守旧也。", "jieyue": "家道忧凶。人口有灾。祈福保庆。犹恐破财。", "story": "︵玉钗记︶穷书生何文秀琅琅书声。感动了富家女王琼珍。吹箫与之相和。後王女出奔。何文秀被陷入狱。王琼珍剪发改容。历尽艰辛。终成眷属。"}, {"id": 39, "level": "下签", "palace": "酉宫", "name": "姜女寻夫", "jiwen": "天边消息实难思，切莫多心望强求；若把石头磨作镜，曾知枉费己工夫。", "poem": "此卦守常安静之象。凡事守己则吉也。", "jieyue": "千般用计。枉费功夫。不如守旧。著甚来由。", "story": "野史。秦。孟姜女。夫范杞郎(万喜良)。新婚奉命作长城之役。姜女往寻之。及至。知夫已死。欲寻骸骨归葬。神为指处咬指出血。点认夫骨。号恸大哭。长城为之崩。妇人守节。自孟女始。"}, {"id": 40, "level": "中签", "palace": "酉宫", "name": "武则天登位", "jiwen": "红轮西坠兔东升，阴长阳消百事亭；是若女人宜望用，增添财禄福其心。", "poem": "此卦阴长阳消之象。凡事先难后易也。", "jieyue": "阴利女人。不宜男子。若是求谋。先凶后吉。", "story": "武则天本唐太宗之妃。高宗即位。成为皇后。高宗逝世。上朝摄政。後自立则天皇帝。改国号曰周。执政十五年。颇多建树。但手段卑劣。"}, {"id": 41, "level": "中签", "palace": "酉宫", "name": "董卓收吕布", "jiwen": "无限好言君记取，却为认贼将作子；莫贪眼下有些甜，更虑他年前样看。", "poem": "此卦认贼作子之象。凡事认真作假。︵看有作施。︶", "jieyue": "只这一著。君子莫错。牢记在心。不生寂寞。", "story": "三国演义。枭雄董卓。以良马及金钱收卖吕布。又认吕布为义子。後吕布私通董卓爱妾貂蝉。二人交恶。吕布与王允共杀董卓。并劝王允尽诛。董卓部属。後吕布败于曹操。擒杀。"}, {"id": 42, "level": "上签", "palace": "酉宫", "name": "目莲救母", "jiwen": "君皇圣后总为恩，复待祈禳无损增；一切有情皆受用，人间天上得期亨。", "poem": "此卦天垂恩泽之象。凡事成就大吉也。", "jieyue": "天皇降恩。始终莫忘。晨昏礼念。可宜烧香。", "story": ""}, {"id": 43, "level": "上签", "palace": "戌宫", "name": "行者得道", "jiwen": "天地变通万物全，自荣自养自安然；生罗万象皆精彩，事事如心谢圣贤。", "poem": "此卦大地交泰之象。凡事大吉无危也。︵营本作荣。︶", "jieyue": "天生万物。谋望皆通。福德相助。瑞气匆匆。", "story": "西游记载。行者本为花果山猴王。访求仙法。拜须菩提祖师作师父。祖师赐姓孙。法名悟空。历七年也不知何者为道。祖师打悟空头三下又倒背著手。悟空明白打三下即三更时份。倒背著手指从後门授道。于是祖师授悟空长生之道。又过三年。更修得七十二变。离家二十年後。返回花果山。"}, {"id": 44, "level": "中签", "palace": "戌宫", "name": "姜维邓艾斗阵", "jiwen": "棋逢敌手著相宜，黑白盘中未决时；皆因一著知胜败，须教自有好推宜。", "poem": "此卦棋逢敌手之象。凡事用机关则吉也。", "jieyue": "欲求心事。恰如围棋。到底胜利。宜用心机。", "story": "三国时。姜维(蜀)与邓艾(魏)会师祈山。二人皆摆八卦阵。姜维又摆长蛇阵。邓艾被困。得司马望救出。喻世事如棋。一子莫错。"}, {"id": 45, "level": "上签", "palace": "戌宫", "name": "仁宗遇仙", "jiwen": "温柔自古胜刚强，积善之门大吉昌；若是有人占此卦，宛如正渴湡琼浆。", "poem": "此卦积善温柔之象。凡事贵人和合也。", "jieyue": "天地有感。应验非常。佛神护佑。得之莫忘。", "story": ""}, {"id": 46, "level": "中签", "palace": "戌宫", "name": "渭水钓鱼", "jiwen": "劝君耐守旧生涯，把定心肠勿起歹；直待有人轻著力，枯枝老树再生花。", "poem": "此卦枯木生花之象。凡事自有成就也。", "jieyue": "守旧守旧。事自成就。动则多殃。静则无咎。", "story": "周。姜尚。字子牙。汲人(东海许州人)。道号飞熊。先世封於吕。亦曰吕望。避纣乱居东海之滨。钓於磻溪(渭水)。其钩为直。意不在鱼。志在君相。文王闻其贤。聘为师(丞相) (其时年八十) 。後周伐纣。灭商兴周。武王称曰尚父。封其子丁公於齐。喻静待时机也。"}, {"id": 47, "level": "上签", "palace": "亥宫", "name": "梁灝登科", "jiwen": "锦上添花色愈鲜，运来禄马喜双全；时人莫恨功名晚，一举登科四海传。", "poem": "此卦锦上添花之象。凡事大吉大利也。︵运至材成本作护有变新。︶", "jieyue": "守旧变新。运至材成。遂平生志。尽皆是命。", "story": "宋朝。书生梁灝字太素。山东人氏。雍熙年间。十八岁考得进士。继续投考未遂。至老年(八十)才一举登科。状元及第。"}, {"id": 48, "level": "中签", "palace": "亥宫", "name": "韩信挂帅", "jiwen": "昆鸟秋来化作鹏，好游快桨喜飞腾；翱翔万里云霄去，馀外诸禽总不能。", "poem": "此卦昆鹏兴变之象。凡事有变动事。︵昆可作左昆右鸟，同鶤，鶤指三尺鸡。有山鸡变凤凰或大器晚成之意。千字文欠鹏这常字。却以鶤喻鹏。游鶤独运。凌摩绛霄。︶", "jieyue": "昆化为鹏。万禽不能。桂香一折。福禄自增。", "story": "韩信。淮阴人。时汉王烧绝栈道。部下将士逃亡甚多。其时。信归汉逃去。何知之。连夜追信回。翌日王知。怒曰将士逃亡过半。不闻丞相有所追。独追信。何也。何曰大王如无意东伐。固罢。若与楚争天下。非信莫当其任。乃拜信为大将。佐汉高帝定天下。虏魏。破赵。降燕。下齐。灭楚。建十大功勋。初封楚王。"}, {"id": 49, "level": "中签", "palace": "亥宫", "name": "王祥求鲤", "jiwen": "天寒地冻水成冰，何须贫吝取功名；只好守己静处坐，待时兴变自然明。", "poem": "此卦水结成冰之象。凡事不用枉求也。︵兴盛本作兴樊。︶", "jieyue": "水结成冰。冰消成水。若是营谋。到底如是。", "story": "(廿四孝)晋。王祥字伏徵。临沂人。性至孝。事继母极恭。谨母欲食生鱼。天寒冰冻。祥赤身卧於冰上。求之。其冰立解。得双鲤。持归。人以为孝感云。後官至太保。进公爵。"}, {"id": 50, "level": "中签", "palace": "亥宫", "name": "陶朱归五湖", "jiwen": "五湖四海任君行，高挂帆蓬自在撑；若得顺风随即至，满船宝贝喜层层。", "poem": "此卦顺风撑船之象。凡事皆顺大吉也。", "jieyue": "自在休悠。不须著力。财禄重重。无不欣美。", "story": "(范蠡归湖)春秋。范蠡。字少伯。吴人。与文种同为我大夫。吴灭越。蠡与种。为越王勾践画策。卑词请成。复求民间美女。得西施进於吴。迨灭吴。功成。蠡知勾践可与同患难。不可共安乐。乃辞官。扁舟泛五湖。止于陶。复以谋生致富。称陶朱公。凡三徙。方成名。後不知所终"}, {"id": 51, "level": "上签", "palace": "子宫", "name": "孔明入川", "jiwen": "夏日炎天日最长，人人愁热闷非常；天地也解知人意，薰风拂拂自然凉。", "poem": "此卦人人愁热之象。凡事随心从意也。", "jieyue": "进退莫疑。自有佳期。营谋用麼。不须妄为。", "story": "刘备缺地盘。时益州的刘璋。被北方的张鲁攻打。想到刘备与他同姓同宗。就让刘备入益州同抗张鲁。孔明随刘备入益州。详察地势。西川一带。地形险要可攻可守。经孔明多方布置。西川就成了刘备发源地。关注：灯塔小居。"}, {"id": 52, "level": "中签", "palace": "子宫", "name": "太白醉捞明月", "jiwen": "水中捉月费功夫，费尽功夫却又无；莫说闲言并乱语，枉劳心力强身孤。", "poem": "此卦贪求费力之象。凡事劳心费力也。︵身枯本作身孤。︶", "jieyue": "言诺难思。费力劳心。宅中忧虑。等遇贵人。", "story": "唐朝诗人。自曰谪仙。被称诗仙。无酒不欢。醉酒到湖边。见月在水中。欲抱之。溺毙。年六十二岁。"}, {"id": 53, "level": "中签", "palace": "子宫", "name": "刘备招亲", "jiwen": "失意番成得意时，龙呤虎啸两相宜；青天自有通霄路，许我功名再有期。", "poem": "此卦龙吟虎啸之象。凡事顺意有望也。", "jieyue": "教去即去。自有亨通。到头必制。立地可谋。", "story": "刘玄德。即西蜀先主也。为荆州牧时。甘夫人(刘备妻)新丧。东吴孙权闻知。诈以妹招赘欲赚(软禁)其人。吴素讨荆州。孔明料知。乃授赵云锦囊计。保先主入吴。(东江招亲)意弄假成真。娶孙夫人以归焉。有曰：周郎妙计高天下。赔了夫人又折兵。"}, {"id": 54, "level": "下签", "palace": "子宫", "name": "马超追曹", "jiwen": "梦中得宝醒来无，自谓南山只是锄；若问婚姻并问病，别寻条路为相扶。", "poem": "此卦梦中得宝之象。凡事枉费心力也。︵寿比南山指长寿。锄指劳苦或掘穴。来路本作从路。︶", "jieyue": "物在水中。形影长短。皆有分定。不用商量。", "story": "三国时。曹操杀马超之父。马超攻曹操。曹操大败。曹操脱下锦衣。割短了胡须。骑马逃窜。得曹洪相救。曹操得以保命。"}, {"id": 55, "level": "中签", "palace": "丑宫", "name": "周武王登位", "jiwen": "父贤传子子传孙，衣食丰隆只靠天；堂上椿萱人快乐，饥饭渴饮因时眠。", "poem": "此卦接竹引泉之象。凡事谋望大吉也。︵椿萱喻父母。困本作因。︶", "jieyue": "接竹引泉。流传不绝。君子谋望。无不欣悦。", "story": "周武王伐纣。八百诸侯战商军。朝歌兵卒倒戈相向。纣王于摘星楼上自焚。商朝灭亡。武王受册宝。即天子位。面南垂拱端坐。武王命散鹿台之财。拆毁摘星楼。发钜桥之粟。释箕子之囚。封比干之墓。式商容之闾。放内宫之人。又偃武修文。归马于南山之阳。放牛于桃林之野。一片安乐景象。"}, {"id": 56, "level": "中签", "palace": "丑宫", "name": "禄山谋反", "jiwen": "滩小石溪流水响，风清明月贵人忙；路须借问何方去，管取林中花草香。", "poem": "此卦船行小滩之象。凡事有贵人助也。︵莫本作管。︶", "jieyue": "营谋用事。劳心费力。守旧待时。凡事大吉。", "story": "营州柳城。胡人。本姓康。字轧荦山。後冒姓安。更名禄山。唐玄宗时。安禄山为节度使。与杨贵妃友好。与杨国忠有隙。于山西举兵谋反。攻打洛阳。又陷潼关。改国号燕。皇帝西逃至四川(蜀)。安禄山于长安烧杀抢掠。後被自己之子所杀。"}, {"id": 57, "level": "中签", "palace": "丑宫", "name": "董仲寻亲", "jiwen": "说是说非风过耳，好衣好禄自然丰；君莫记取当年事，汝意还如我意同。", "poem": "此卦孩儿见母之象。诸事贵人大吉也。︵好衣本作好交。好指珍惜。︶", "jieyue": "所用谋望。皆大欢喜。从公用力。如子逢娘。", "story": "董仲寻亲或指董永之子。董仲欲寻母。至太白山找。终见其母。（董永卖身）汉。董永。千乘人。少失母。独养父。流寓孝感。父亡无以葬。乃从人贷钱一万。日後无钱还。当以身作奴。葬毕。其主要董永日取柴一担。汲水四担。锄田六七亩。辛苦难当。一日上山砍柴倦睡。皇天见其孝行。即差仙女下凡为婚。董永醒来见女恐是妖精。女拦曰吾无父母又无依。欲结为夫妇。董永见其凄凉。带女回归。主人责董永拐带妇人祸及其主。後暂留该女。遍访四方家庭并无失妇人。才允成亲。董妇百日织得锦五十丈。剪一半往市卖出得银。赎脱董永身。後将锦进。敕封进宝状元。仙姬曰。天赐儿子三岁送还。(仙女回天)。後其子十六岁中状元。衣锦还乡。"}, {"id": 58, "level": "中签", "palace": "丑宫", "name": "文王问卜", "jiwen": "直言说话君须记，莫在他乡求别艺；切须守己旧生涯，除是其馀都不利。", "poem": "此卦守旧守时之象。凡事守旧则吉也。", "jieyue": "得住且住。可取且踞。莫宜别事。只宜守旧。", "story": "周文王善卜卦。纣王召见。文王卜之不吉。必有七年之厄。严命其长子依旧法治岐。切莫往外。文王果被纣王软禁于羑里。後其子往救其父被杀。皆因忘父命离乡也。文王于羑里从旧艺。编修易经。故文王也是易经作者之一也。(另二位作者是同公与孔子)"}, {"id": 59, "level": "中签", "palace": "寅宫", "name": "张良隐山", "jiwen": "直上重楼去藏身，四围荆棘遶为林；天高君命长和短，得一番成失二人。", "poem": "此卦守旧随时之象。凡事待时则吉。（绕本作遶。意同。）", "jieyue": "如醉饮酒。只宜守旧。直待时来。无灾无咎。", "story": "汉。张良。字子房。韩人。其先五世相韩。秦灭韩。良散家财遁迹。欲为韩报仇。乃使力士怀铁锥。击始皇於博浪沙上。误中副车。始皇大索天下。十月不获。後左(佐)汉定天下。功成谢绝人事。托名与赤松子游。"}, {"id": 60, "level": "下签", "palace": "寅宫", "name": "赤壁鏖兵", "jiwen": "抱薪救火大皆燃，烧遍三千亦复然；若问荣华并出入，不如收拾枉劳心。", "poem": "此卦抱薪救火之象。凡事亦自谨防也。（一旦本作一日。祸身本作归身。）", "jieyue": "有千般计。一旦相惹。不如莫动。恐惹祸身。", "story": "三国时。曹操大军驻赤壁岸边。孙权将周瑜。联刘备军抗曹。孔明借东风。黄盖引火烧连环船。二军激战。一片火海。曹军大败。史称赤壁之战。(鏖指烧杀。)"}, {"id": 61, "level": "中签", "palace": "寅宫", "name": "苏小妹难夫", "jiwen": "日上吟诗月下歌，逢场作戏笑呵呵；相逢会过难藏避，喝彩齐唱连哩罗。", "poem": "此卦守旧随时之象。凡事时吉利也。（日落本作日此。连理指连株树，喻夫妻和谐。罗指网。喻夫妇相缠。或绫罗绸缎指彩衣。）", "jieyue": "佳人在屋。吟唱诗曲。一片欢心。命中祸福。", "story": "(恒世恒言)宋朝。苏小妹即苏东坡之妹。博学多才。新婚之夜。苏小妹吟诗又出对联。备三个难题考夫婿。有意刁难新郎秦少游。至第三题苦思著。幸好得苏东坡暗助。才可洞房。有颂曰：文章自古说三苏，小妹聪明胜丈夫；三难新郎真异事，一间秀气世间无。"}, {"id": 62, "level": "中签", "palace": "寅宫", "name": "唐僧得道", "jiwen": "晨昏全赖佛扶持，须是逢危却不危；若得贵人相引处，那时财帛亦相隋。", "poem": "此卦神佛暗佑之象。凡事忍耐大吉也。（传籁本作传赖。有作全赖）", "jieyue": "平平稳稳。四方名显。改旧从新。亦无凶险。", "story": "唐三藏信姓陈名禕。十三岁出家。法号玄奘。往天竺(印度)取经。历尽艰辛。四年始达。学习十五年後返国。携回大量佛经。并译成中文。一天来到河边。佛祖灵山在望。有一独木桥。唐僧不敢走过。佛祖化身船夫并撑著无底破船。唐僧跌下河中。被船夫救起。唐僧就此得证佛道了。"}, {"id": 63, "level": "中签", "palace": "卯宫", "name": "女娲氏炼石", "jiwen": "昔日行船失了针，今朝依旧海中寻；若然寻得原针在，也费工夫也费心。", "poem": "此卦海中寻针之象。凡事费心劳力也。（然寻本作划日。缘有作禄。）", "jieyue": "福是缘基。缘是福种。说得分明。切宜守谨。", "story": "淮南子。览冥篇。往古之时。四极废。九州裂。天不兼覆。地不周载。火爁炎而不灭。水浩洋而不息。猛兽食颛民。鷙鸟攫老弱。于是女娲炼五色石以补苍天。断鰲足以立四极。杀黑龙以济冀州。积芦灰以止****。苍天补。四极正。****涸。冀州平。狡虫死。颛民生。背方州。抱圆天。当此之时。禽兽虫蛇。无不匿其爪牙。藏其蜇毒。无有攫噬之心。考其功烈。上际九天。下契黄垆。名声被後世。光晖熏万物。"}, {"id": 64, "level": "下签", "palace": "卯宫", "name": "马前覆水", "jiwen": "游鱼却在碧波池，撞遭罗网四边围；思量无计番身出，事到头来惹是非。", "poem": "此卦鱼遭罗网之象。凡事亦宜提防也。", "jieyue": "屋下安身。祸从天降。早觉先防。免遭灾殃。", "story": "马前覆水(覆水难收) 汉朝。名臣姓朱。名买臣。表字翁子。会稽郡人氏。家贫未遇。夫妻二口住于陋巷蓬门。砍柴卖钱度日。卖柴凭人估值。不争价钱。其妻出门汲水。见群儿嬉笑买臣。深以为耻。其妻後去。五十岁时。汉武帝求贤。拜为会稽太守。其妻自悔有眼无珠。愿降为婢妾。伏事终身。买臣命取水一桶。泼于阶下曰。若水可收。则可复合。念结发之情。判後园隙地与妻及其夫耕种自食。其妻遂投河而死。（买臣五十富贵）汉。朱买臣。会稽人。家贫。卖薪自给。行歌诵书。妻羞之。求去。买臣曰。吾年五十当富贵。即时自可报汝。妻不听。适田夫後。买臣果五十为会稽太守。妻与田夫治道迎官。买臣驻车呼之。以车载其夫妇。舍园中给食一月。妻惭自缢。与夫钱以葬之。"}, {"id": 65, "level": "下签", "palace": "卯宫", "name": "孙滨困庞涓", "jiwen": "眼前欢喜未为欢，亦不危时亦不安；割肉成疮为甚事，不如守旧待时光。", "poem": "此卦割肉成疮之象。凡事只宜守旧待时。（补疮本作成疮。）", "jieyue": "知止则止。知宽自宽。割自身肉。疾痛一般。", "story": "战国。孙膑齐人。庞涓魏人。同师事鬼谷子。孙膑之学优於庞涓。涓为魏将。与膑斗智。输而忌之。乃以计刖其足。後孙膑假作颠狂。得脱归。齐威王以(膑)为师。将兵伐魏。用减灶添兵之法。赚庞涓。追至马陵道。伏弩射死。"}, {"id": 66, "level": "下签", "palace": "卯宫", "name": "霸王被困", "jiwen": "路险马羸人行急，失群军卒困相当；滩高风浪船掉破，日暮花残天降霜。", "poem": "此卦船破下滩之象。凡事险阻提防也。（嬴弱也。棹桨也。）", "jieyue": "守旧守旧。安静无咎。不用求谋。自在优游。", "story": "(项羽被困)韩信率诸侯兵。与楚王大战於九里山。十面埋伏。围籍垓下。籍走至乌江。有高长牺舟以待曰。今独臣有船。王急渡江东。亦足王也。籍笑曰。江东子弟仝籍。渡江西诛秦无道。今无一人还。纵江东父兄。怜而王我。我独不愧於心乎。竟自羽(刎)而死。"}, {"id": 67, "level": "上签", "palace": "卯宫", "name": "金星试窦儿", "jiwen": "一条金线秤君心，无减无增无重轻；为人平生心正直，文章全具艺光明。", "poem": "此卦心平正直之象。凡事平稳无凶也。︵贝指贝子即宝贝。贝有作具。︶", "jieyue": "心平正直。到底清平。只依本份。天下太平。", "story": ""}, {"id": 68, "level": "中签", "palace": "卯宫", "name": "郭汾阳祝寿", "jiwen": "门延吉庆喜非常，积善之门大吉昌；婚姻田蚕诸事遂，病逢妙药即安康。", "poem": "此卦春梦百花、门廷吉庆之象。凡事遇贵人大吉也，凡事顺遂也。", "jieyue": "春深日暖。百花自开。事莫迟疑。从人显达。积善之家。必有馀庆。忠义之门。拱照福星。", "story": "唐朝大将军。汾阳王郭子仪。做大寿。亲友来贺。气氛一片欢乐。喜气洋洋。"}, {"id": 69, "level": "中签", "palace": "辰宫", "name": "梅开二度", "jiwen": "冬来岭上一枝梅，叶落枝枯总不催；但得阳春悄急至，依然还我作花魁。", "poem": "此卦梅花占魁之象。凡事宜迟则吉也。（摧本作催。）", "jieyue": "一箭射空。当空不空。待等春来。彩在其中。", "story": "唐朝。一日梅花皆被风雨打落。梅良玉与陈公父女。拜求上天再开梅花一次。果梅花再开。是为梅开二度。其後梅良玉中元。终与陈杏元(陈公女)联姻。"}, {"id": 70, "level": "下签", "palace": "辰宫", "name": "李密反唐", "jiwen": "朝朝恰似采花蜂，飞出西南又走东；春尽花残无觅处，此心不变旧行踪。", "poem": "此卦蜜蜂采花之象。凡事劳心费力也。（无觅本作产朝。）", "jieyue": "无觅春色。久雨不晴。求谋动用。不如安静。", "story": "隋末。瓦岗寨之首领。李密自封魏王。手下名将。如秦琼。单雄信。程咬金。纷投唐王李渊。李密与王伯当後亦投李渊。又娶李仁公之公主为妻。後杀妻反唐。被乱箭射死。"}, {"id": 71, "level": "中签", "palace": "辰宫", "name": "文君访相如", "jiwen": "谁知仓龙十九衢，女子当年嫁二夫；自是一弓架两箭，切恐龙马上安居。", "poem": "此卦一弓架两箭之象。凡事再合则吉也。（认卫有作谁知苍龙下九衢。）", "jieyue": "不出重重。事由天命。振六中开。切宜谨守。", "story": "汉朝。卓氏有女名文君。新寡。好文诗。听司马相如弹琴。遂起心。乘夜奔往相处。谈得投机。互倾恋慕。二人私奔出城。至成都结为夫妻。但家贫。两夫妇在临邛市。开设酒店。一箇是才子。一箇是佳人。两家都要当炉卖酒。司马相如後大贵。"}, {"id": 72, "level": "中签", "palace": "辰宫", "name": "王莽求贤", "jiwen": "养峰须用求他蜜，只怕遭触尾上钉；须是眼前有异路，暗裏染如荆棘林。", "poem": "此卦结蜂采蜜、求甜得苦之象。凡事劳心费力也。凡事防范灾殃也。", "jieyue": "事须仔细。不用强求。结蜂采蜜。有甚来由。", "story": "汉。王莽依其姑母乃汉元帝之后。官封为新都侯。为人谦恭。又广结豪杰贤能。仗义疏财。後王莽篡汉。改国号曰。新。刘秀起来推翻王莽。恢复汉室。史称後汉。"}, {"id": 73, "level": "上签", "palace": "", "name": "陈桥兵变", "jiwen": "春来雷震百虫鸣，番身一转离泥中；始知出入还来往，一朝变化便成龙。", "poem": "此卦雷发百虫之象。凡事遇贵人吉兆也。", "jieyue": "雷发时转。出入两存。一朝变化。直到天门。", "story": "宋太祖赵匡胤。仕局为检点。世宗崩。子恭帝立。仅数岁。(赵)奉命往伐河东。兵至陈桥。部下将士以主幼政乱。劝太祖即位。初不许。後乘太祖醉卧。以黄袍加体。乃引兵回东。受周恭帝禅位。(恭帝当年七岁。皇后新寡。兵变比禅让更合。)"}, {"id": 74, "level": "下签", "palace": "", "name": "秦败擒三帅", "jiwen": "似鹄飞来自入笼，欲得番身却不通；南北东西都难出，此卦诚恐恨无穷。", "poem": "此卦似鹄投水(笼)之象。凡事多虚少实也。", "jieyue": "进身可(不)得。退步为(不)能。低头直去。悉在其中。", "story": "秦穆公不听老臣蹇公之言。出师侵郑。与晋人战於肴。秦师给晋国诱入险谷。前路被堵塞。两旁晋兵抛火种磺硝。後面晋兵杀声震天。秦军自相践踏。死伤无数。不敌而至大败。三个大元帅。俱皆被擒。"}, {"id": 75, "level": "中签", "palace": "午宫", "name": "伍员夜出昭关", "jiwen": "恰如抱虎过高山，战战竞竞胆碎寒；不觉忽然从好事，切须保守一身安。", "poem": "此卦抱(拖)虎过山之象。凡事险凶惊恐也。︵拖虎本作抱虎。︶", "jieyue": "危危险险。前程有阻。若问求谋。到底辛苦。", "story": "伍子胥。春秋时代楚人。楚平王追杀之。日藏夜行。翻山越岭。至边境关卡韶关。守关的竟认不出伍员。因他终日焦虑。一夜白头。後平安到达吴国。"}, {"id": 76, "level": "中签", "palace": "午宫", "name": "洪武看牛", "jiwen": "鱼龙混杂意相同，耐守深潭待运通；不觉一朝头耸出，禹门一跳过龙宫。", "poem": "此卦鱼龙未变之逸象。凡事待时至可也。", "jieyue": "虽是滋基。也要待时。营谋自本。切莫妄为。", "story": "洪武即明太祖朱元璋。小时家贫。替人看牛。後当过和尚。又行乞度日。最终参军打败元兵。建立明朝。喻英雄莫问出处。"}, {"id": 77, "level": "中签", "palace": "午宫", "name": "捧壁归赵", "jiwen": "梦中说得是多财，声名云外总虚来；水远山遥难信实，贵人点指笑颜开。", "poem": "此卦梦中得宝之象。凡事虚多少实也。", "jieyue": "如梦说梦。声名莫望。只待好时。贵人指示。", "story": "(完璧归赵)春秋时代。秦强赵弱。秦王欲十五城交换和氏璧。赵国大夫蔺相如携璧至秦。见秦王欲占不换此璧。蔺相如以砸碎和氏璧相要。最後终可携璧归赵。"}, {"id": 78, "level": "上签", "palace": "午宫", "name": "临潼救驾", "jiwen": "冷水未烧白涕汤，不寒不热有温凉；要行天下无他事，为有身中百艺强。", "poem": "此卦平善用事之象。凡事平稳大吉也。", "jieyue": "囚人逢赦。病遇良医。求财谋望。贵人指示。", "story": "隋末。唐王李渊经过临潼山下。秦琼(叔宝)正。于伍员庙午睡。被喊声吵醒。秦琼冲进重围。杀退敌人。救了王爷一家。即被唐王重用。成为唐朝之开国功臣。"}, {"id": 79, "level": "中签", "palace": "午宫", "name": "暗扶倒铜旗", "jiwen": "虚空结愿保平安，保得身安愿不还；莫忘神圣宜还了，岂知神语莫轻慢。", "poem": "此卦信实莫信虚之。凡事守旧之兆也。", "jieyue": "人有我见。心不用忙。观音指示。切莫轻慢。︵签诗意许愿须还。与", "story": "隋末。东领关由杨义成镇守。并摆出铜旗阵。秦叔宝久攻不下。探知护阵主将罗成是他表弟。便联络姑母。命其子明保铜旗。暗助叔宝。秦叔宝破了铜旗阵。占领东岭关。得胜而归。"}, {"id": 80, "level": "上签", "palace": "未宫", "name": "智远投军", "jiwen": "直上仙岩要学仙，岂知一旦帝王宣；青天日月常明照，心正声名四海传。", "poem": "此卦贵人接引之象。凡事和合大吉也。", "jieyue": "有始有终。莫向西东。心中用事。贵人重重。", "story": "刘智远(知远)。沙陶(沙陀族)人。刘志远与妻李三娘居舅家。舅嫌其贫。哄志远往瓜园。欲给二瓜精吃掉。志远夜持鎗。战瓜精走入地。掘开见剑。拾之辞妻投军。投靠岳勋。官至安抚使。契丹灭晋。中原无主。智远于晋阳即帝位。改国曰后汉。仍称天福而不改元。"}, {"id": 81, "level": "上签", "palace": "未宫", "name": "风送滕王阁", "jiwen": "梧桐叶落秋将暮，行客归程去似云；谢得天公高著力，顺风船载宝珍归。", "poem": "此卦梧桐叶落之象。凡事先凶后吉也。", "jieyue": "心中取事。天心从之。营谋用事。尽可施为。", "story": "唐朝咸淳年。南昌滕王阁重建成。王勃欲往。睡梦中水神曰送君一帆。醒来至江边。果见一船。上船後不久。即至滕王阁(离家七百里)。书滕王阁序。王勃乃唐高宗朝间一秀士。姓王名勃字子安。祖贯山西晋州龙门人氏。善诗。有颂曰：从来才子是神仙。风送南昌岂偶然。赋就滕王高阁句。便随仙仗伴中源。(中源指水神称中源水君。暗喻王勃成仙也)。"}, {"id": 82, "level": "中签", "palace": "未宫", "name": "火烧葫芦谷", "jiwen": "炎炎烈火焰连天，焰裏还生一朵莲；到底得成终不害，依然生弃长根枝。", "poem": "此卦火裏生莲之象。凡事似险非险也。", "jieyue": "虽然逢险。不损其身。营谋用事。皆遇贵人。︵签诗与", "story": "三国。赤壁之战曹操大败。落荒而逃。孔明派大将于各处埋伏。曹操至葫芦谷口休息。见地势险要又无伏兵而哈哈大笑。忽闻炮响。张飞杀到。山谷到处起火。曹操急上马。狼狈奔逃。败走华容道。"}, {"id": 83, "level": "中签", "palace": "未宫", "name": "李渊登位", "jiwen": "譬若初三四五缺，半无半有未圆全；等待十五良宵夜，到处光明到处圆。", "poem": "此卦月缺未圆之象。凡事守候忍耐也。", "jieyue": "守旧待待时。如月初出。待等圆时。无有不吉。", "story": "公元六一八年。隋炀帝在江都看琼花。被部下杀死。唐王李渊得知。即于太原登基称帝。国号唐。李渊(唐高祖)在位九年。由李世民传唐太宗)接位。喻境况渐入佳景。"}, {"id": 84, "level": "下签", "palace": "未宫", "name": "庄子试妻", "jiwen": "因名丧德如何事，切恐吉中变化凶；酒醉不知何处去，青松影裏梦朦胧。", "poem": "此卦寒鱼离水、败德招凶之象。凡事不可移动也。凡事脚踏实地也。︵本作解除保安。︶", "jieyue": "寒鱼离水。美中不足。若问营谋。不如莫起。此签六甲煞旺。诸事不利。禳灾保安。", "story": "周朝。姓庄名周。字子休。宋国蒙邑人。仕周为漆园吏。庄子假死试妻。其妻田氏守孝。七天後有一楚国王孙公子到访。自称庄子之徒。愿执百日之丧。田氏爱公子俊美。不足廿日成婚。公子叫心疼。曰脑髓(人心)可治。田氏往劈庄子棺以取脑髓(人心)。庄子破棺而出。後田氏羞愧自杀。"}, {"id": 85, "level": "中签", "palace": "申宫", "name": "韩文公遇雪", "jiwen": "云开雾罩山前路，万物圆中月再圆；若得诗书沉梦醒，贵人指引步天台。", "poem": "此卦春尽花开之象。凡事主后改变也。︵闇本作开。有作深。万圆有作春残花尽又再开。天台指天宫或指天台山。︶", "jieyue": "老者用求。春残再开。欲求名利。晚遇横财。", "story": "韩愈。字退之。昌黎人。唐德宗贞元八年进士。諡文公。因谏迎佛骨。独怒天子。贬至潮州刺史。途经蓝关。大雪封山。韩叹皇上不杀我。皇天亡我矣。事前其侄韩湘子曾曰：云横秦岭家何在。雪拥蓝关马不前。此时韩文公才悟其意。後韩愈弃官。财产尽捐地方。入山修道成仙。"}, {"id": 86, "level": "上签", "palace": "申宫", "name": "商辂中三元", "jiwen": "春来花发映阳台，万里车来进宝财；若得禹门三级浪，恰如平地一声雷。", "poem": "此卦上朝见帝之象。凡事太吉大利也。", "jieyue": "朝帝受职。如贫得宝。谋望从心。卦中第一。此签从心所欲。诸事皆吉。", "story": "三元记。明朝。商辂。浙江人。父早亡。商辂三元及第。喻步步高升也。(三元即三级试。乡试：解元。省试：会元。殿试：状元。)"}, {"id": 87, "level": "中签", "palace": "申宫", "name": "咬金探地穴", "jiwen": "人行半岭日衔山，峻岭崖岩未可安；仰望上天为护佑，此身犹在太平间。", "poem": "此卦淘沙见金、人处险境之象。凡事有贵人之兆也。︵西有作衔。本作不明符︶。", "jieyue": "凿石见玉。淘沙见金。须要著力。只是劳心。困厄之境。无处安身。求神庇佑。祈可放心。︵", "story": "为庆战功。程咬金于演武杨摆宴。忽地裂一洞。深不可测。大家拈字抽签。咬金抽得。租绳缚身入穴。见石造之门桌椅桥等。桌上还有龙袍玉带。咬金穿著出洞。做了三年混世魔王。"}, {"id": 88, "level": "中签", "palace": "酉宫", "name": "庞洪畏包公", "jiwen": "木为一虎在富门，须是有威不害人；分明说是无防事，忧恼迟疑恐惧心。", "poem": "此卦林木虎有威之象。凡事虚惊少实也。︵林有作木。︶", "jieyue": "炉头点雪。似耳边风。可宜作福。后吉前凶。", "story": "宋朝仁宗。包公为开封府府尹。庞洪为国丈(皇帝作女婿)。陷将军狄青于狱中。包公求审此案。庞洪惊畏万分。多方阻拦。後案情大白。证实庞洪诬陷。呈宋仁宗圣裁。又因皇戚被释。"}, {"id": 89, "level": "上签", "palace": "酉宫", "name": "大看琼花", "jiwen": "出入营谋大吉昌，似玉无瑕石裏藏；若得贵人来指引，斯时得宝喜风光。", "poem": "此卦石藏珍宝之象。凡事称心大吉也。(琼花指昙花)。", "jieyue": "如石藏玉。贵人指示得祗称心。欢怀得意。", "story": "琼花年开一次。且在晚间隋炀帝。听得扬州有琼花。即动用民工开凿运河。南下扬州看花。被杀隋亡。或指欣赏仙境之宝花。"}, {"id": 90, "level": "上签", "palace": "酉宫", "name": "苇佩遇仙", "jiwen": "忽言一信向天飞，泰山宝贝满船归；若问路途成好事，前头仍有贵人推。", "poem": "此卦功名成就之象。凡事宜进大吉也。", "jieyue": "若问功名。前有贵人。更添喜气。财禄丰盈。此签诸事佳吉。求之顺遂。", "story": "关注：灯塔小居。(韦佩遇仙)穷书生韦佩年近四十。牵驴过洛阳桥。一渔夫卖大鳖。韦佩不忍。但缺钱。遂以驴换鳖。于桥下放生。从此韦佩中举。加官晋爵。或指此鳖为仙所化。故曰韦佩遇仙。"}, {"id": 91, "level": "中签", "palace": "酉宫", "name": "三英战吕布", "jiwen": "好展愁眉出众来，前途改变喜多财；一条大路如天阔，凡有施财尽畅怀。", "poem": "此卦前途显达之象。凡事通泰大吉也。", "jieyue": "一条大路。可向前行。心中用事。只可向前。此签诸事如心。顺利吉昌。︵签意与", "story": "三国时。吕布领兵三万入驻虎牢关。张飞持三叉戟与吕布持丈八矛相战。不分胜负。关羽持青龙偃月刀加入。刘备又加入战圈。是为三英战吕布。吕布见不能胜。逃回关内。"}, {"id": 92, "level": "上签", "palace": "酉宫", "name": "蔡卿报恩", "jiwen": "自幼为商任设谋，财禄盈丰不用求；若是只身谋望事，秀才出去状元回。", "poem": "此卦自小为商之象。凡事勤俭无忧也。", "jieyue": "自小至大。无阻无碍。作意营谋。功名顺遂。", "story": "蔡卿即蔡伯喈(蔡邕)。上京赴考。其妻赵五娘。因家贫以糟糠果腹。乡邻张广才时加接济。蔡伯喈中了状元。回家得知其妻获张广才相帮。夫妻便到张家拜谢。并赠银两。"}, {"id": 93, "level": "中签", "palace": "戌宫", "name": "高君保招亲", "jiwen": "鸾凤翔毛雨淋漓，当时却被雀儿欺；终教一日云开达，依旧还君整羽衣。", "poem": "此卦鸾凤被雨之象。凡事待时大利也。", "jieyue": "小人日盛。君子莫为。只宜守己。待时施为。", "story": "高君保(高俊保)为高怀德之子。赵匡胤领兵征南唐被困。高君保领兵二百押粮接济。至双锁山。被女贼刘金定劫持。并强逼成亲。夫妻领众杀入重围。救出赵匡胤。"}, {"id": 94, "level": "下签", "palace": "戌宫", "name": "伯牙访友", "jiwen": "君子莫体小人为，事若差池各是非；琴鸣须用知音听，守常安静得依稀。", "poem": "此卦要逢知己之象。凡事守常则吉也。︵惹本作各。知音方许本作食音方话。︶", "jieyue": "知音方许。闲事莫理。待得贵人。无不欢喜。", "story": "(伯牙碎琴)春秋战国。姓俞名瑞字伯牙。楚国郢都人。事晋退休。乘船遇荒山。见樵夫子期欣赏其琴。遂结契兄弟。相约一年後重叙。到期再往访。才知锺子期已死。往访其坟。断弦碎琴。曰：摔碎瑶琴凤尾寒。子期不在对谁弹。春风满面皆朋友。欲觅知音难上难。"}, {"id": 95, "level": "中签", "palace": "戌宫", "name": "曹丕称帝", "jiwen": "志气功业在朝朝，今将酒色不胜饶；若见金鸡报君语，钱财福禄与君招。", "poem": "此卦志气功名之象。凡事守常大吉也。", "jieyue": "志气心动。守己未迟。金鸡报诺。无不欢喜。（签诗与", "story": "曹丕为曹操之次子。曹操挟天子(汉献帝)以令诸侯。曹丕废献帝自立。改国号为魏。七年後又被手下司马炎废掉。改国号为晋。"}, {"id": 96, "level": "上签", "palace": "戌宫", "name": "窦燕山积善", "jiwen": "巍巍宝塔不寻常，八面玲珑尽放光；劝君立志勤顶礼，作善苍天降福祥。", "poem": "此卦福德现身之象。凡事大吉利也。", "jieyue": "这些福份。众人皆有。不用心忙。福德前定。", "story": "宋朝。窦燕山中年无子。一夜梦中。其父训他去恶从善。自此窦燕山痛改前非。力行方便。并得五子。三字经有载：窦燕山。有义方。教五子。名俱扬。"}, {"id": 97, "level": "中签", "palace": "亥宫", "name": "六出祁山", "jiwen": "当风点烛空疏影，恍惚铺成杨里花；累被儿竟求牧拾，怎知只是自浮槎。", "poem": "此卦当风点烛之象。凡事虚名不利也。（镜里花本作杨里花。童本作竟。累拾有作累累河山待收拾。幻浮槎本作自浮槎。浮槎指飞行物体。）", "jieyue": "富贵在天。贫穷是命。不用求谋。皆是前定。", "story": "三国。祁山横亘于魏蜀间。孔明屡出祁山伐魏不果。第六次出祁山。孔明写了出师表。终不能胜。且死于五丈原。喻时也命也。到头来一切皆空。"}, {"id": 98, "level": "下签", "palace": "亥宫", "name": "吉平遇难", "jiwen": "出入求谋事宜迟，只恐闲愁惹是非；如鸟飞入罗网裏，相逢能有几多时。", "poem": "此卦守旧随缘之象。凡事不如意主凶也。︵急恐忧愁本作办恐开愁。脱困本作相逢。︶", "jieyue": "守旧随时。待贵人至。若问诸般。主事定迟。", "story": "三国。医师吉平。感于曹操挟天子以令诸侯。欲杀奸臣。恰曹操头痛。吉平往治。药中下毒。曹操发觉。严刑拷打吉平。吉平大骂曹操。一头撞于石柱自杀。"}, {"id": 99, "level": "下签", "palace": "亥宫", "name": "陶三春挂帅", "jiwen": "勒马持鞭直过来，半有忧危半有灾；恰似遭火焚烧屋，天降时雨荡成灰。", "poem": "此卦半忧半喜之象。凡事只宜行善也。︵勒有作策。︶", "jieyue": "终身劳力。莫管是非。枷锁临时。怨尤自至。", "story": "宋朝。陶洪之女。陶三春与郑恩比武成亲。生子郑印。娶妻王玉娥。皆习武。後闻郑恩与赵匡胤出兵南唐被围。陶三春带同子媳攻打南唐。两师会合。得胜而回。"}, {"id": 100, "level": "下签", "palace": "亥宫", "name": "三教谈道", "jiwen": "佛神灵变与君知，痴人说事转昏迷；老人求得灵签去，不知守旧待时来。", "poem": "此卦守常勿动之象。凡事宜待时吉也。", "jieyue": "完满灵签。尽报君加。信旧勿动。待等时至。此是满签。诸事不利。大作福力。可保平安。", "story": "北周武帝时。三教(儒释道)互相排斥。皇帝召集大会辩论。经过三次争辩。没得结论。喻道在我教。理存我方。争执不止。痴事一桩。"}];
+let crs=null,cq="";
+const _=function(id){return document.getElementById(id)};
+
+function gf(l){return{"上签":"大吉","中签":"中平","下签":"凶"}[l]||"中平"}
+function gi(l){return{f2:gf(l.level),ov:go(l),sg:gs(l),ad:ga(l),rk:gr(l),bt:gb(l)}}
+
+function go(l){var id=l.id,lv=l.level;
+ var m={1:{s:"开天辟地之象，万事俱备，只欠东风",d:"此签为万象更新之始，如同盘古开天辟地，一切皆有可能。当前正是开创局面的最佳时机，你所求之事已有天时地利，只待你以正直之心去践行。"},
+  2:{s:"潜龙勿用，蓄势待发",d:"如同鲸鱼尚未化龙，此时不宜冒进。你当前处于积累阶段，需要忍耐与等待。不要因暂时的困境而气馁，厚积薄发之日终会到来。"},
+  3:{s:"劳心费力，终有所成",d:"如燕子衔泥筑巢，过程虽辛苦却不可放弃。你正在为某个目标付出大量心力，虽然暂时看不到成果，但这些努力不会白费。天道酬勤，坚持下去必有转机。"},
+  4:{s:"破镜重圆，好事多磨",d:"此签象征失而复得、破镜重圆。你所期盼的事虽有波折，但最终会回到正轨。家庭、感情、事业都将迎来新的转机。"},
+  5:{s:"有心栽花，无心插柳",d:"刻意追求反而难得，不经意间却得遇知己。你对某些事过于执着，不如放松心态。真正的机缘往往在你放下执念时悄然而至。"},
+  6:{s:"英雄不问出处，终有出头之日",d:"即使身处低微，只要有真才实学，终会被人赏识。你当前虽处不利位置，但你的能力和品德终将被看见。"},
+  7:{s:"逆水行舟，随遇而安",d:"前路多有阻碍，奔波劳顿却难见成效。此时不宜强求，退一步反而海阔天空。安于当下，静待时机。"},
+  8:{s:"根基稳固，前程似锦",d:"如同茂林松柏，经得起风霜考验。你多年积累的底蕴和实力将在未来大放异彩。保持正直之心，功名成就指日可待。"},
+  9:{s:"心正理直，光明坦荡",d:"此签如皎月当空，光明无碍。你的正直和公心将被大家看见。不做亏心事，不怕鬼敲门。只要你问心无愧，一切自会水到渠成。"},
+  10:{s:"明珠暗投，待时而动",d:"美玉藏于石中，需要识货之人。你身怀才华却未遇良机，此时不必四处奔走寻求，不如静待那个真正懂你价值的人出现。"}};
+ if(m[id])return m[id];
+ if(lv==="上签")return{s:"吉星高照，万事亨通",d:"此签为上吉之兆。你所求之事整体趋向顺利，只要持正而行，自得天助。当前是顺应天时、积极行动的好时机。"};
+ if(lv==="下签")return{s:"谨慎行事，守正待时",d:"此签提醒你当前局势存在变数。不可冒进，宜守不宜攻。静心思考，耐心等待转机，不要被一时的困难所动摇。"};
+ return{s:"平稳过渡，静观其变",d:"此签为中平之兆。当前事态发展平稳，无大吉亦无大凶。关键在于你的选择，若行正道则吉，若走偏锋则凶。保持平常心，顺势而为。"};}
+
+function gs(l){var m={1:"目前你正处于人生的新起点，一切皆有可能。你有强烈的行动意愿和充足的能量，但需要明确方向，以正直之心行事。",
+ 2:"你可能正处在高不成低不就的尴尬位置。有抱负却难以施展，有信心却屡受挫折。这不是你能力不够，而是时机未到。",
+ 3:"你正在为某件事付出超乎寻常的努力，甚至感到身心俱疲。你可能产生过放弃的念头，但内心深处知道不能半途而废。",
+ 4:"你可能正经历一段关系的修复或重建，或是事业的重新起步。过去的裂痕正在弥合，新的希望正在生长。",
+ 5:"你对某件事或某个目标有着强烈的渴望，但越是努力反而离目标越远。这让你感到困惑和沮丧，其实这是生活在提醒你：放松一些。",
+ 6:"你可能感到被忽视或低估，觉得自己怀才不遇。周围的环境似乎对你不利，但你的实力正在悄悄成长。",
+ 7:"前路坎坷，你正在经历一段艰难的时期。每一步都走得沉重，甚至看不到前方的光亮。但请记住，最黑暗的时刻往往意味着黎明将至。",
+ 8:"你已打下坚实的基础，积累了丰富的经验和资源。虽然前进的速度不快，但每一步都很稳健。",
+ 9:"你是一个内心正直的人，也许正面临某种不公或误解。请相信真相终会大白，你的清白和正义感是你最大的武器。",
+ 10:"你有才华和能力，但尚未被合适的人发现。你可能会有些急躁，想要用各种方式证明自己。但真正懂你的人不需要你刻意表现。"};
+ if(m[l.id])return m[l.id];
+ if(l.level==="上签")return"整体运势向好，你所关心的事情正在朝着有利的方向发展。周围的环境对你有利，贵人可能出现。保持开放和积极的心态，机会就在眼前。";
+ if(l.level==="下签")return"当前局势较为复杂，事情的发展可能不如预期。你需要格外谨慎，避免冲动决策。这不是放弃的时候，而是需要更多耐心和智慧的时候。";
+ return"当前状态平稳，没有明显的起落。事情的发展取决于你的选择和行动。保持冷静的头脑，不要被情绪左右，做出明智的判断。";}
+
+function ga(l){var m={1:{a:"主动行动，大胆开创",d:"该争取",al:"可合作但保持主导",dt:"此签鼓励你勇敢迈出第一步。你已具备成功的条件，现在需要的是行动。但切记人行忠正帝王宣，以正直之心行事方得长久。"},
+ 2:{a:"耐心等待，积蓄力量",d:"该等待",al:"宜独处蓄力",dt:"苏秦佩六国相印之前，也曾落魄而归。你需要的不是更多努力，而是时间。利用这段等待期充实自己，机会来临时才能抓住。"},
+ 3:{a:"坚持下去，调整方法",d:"该坚持",al:"可寻求帮助",dt:"燕子衔泥，筑巢虽苦，但这是必经之路。你需要在坚持的同时反思方法是否正确，不要一条路走到黑，适时调整策略。"},
+ 4:{a:"主动修复，耐心等待",d:"该争取",al:"需要双方配合",dt:"破镜可以重圆，但需要双方的诚意和努力。如果你在等待一段关系或机会的修复，请主动迈出第一步，但也要给对方时间和空间。"},
+ 5:{a:"放下执念，顺其自然",d:"该放下",al:"宜独处静思",dt:"有些事越用力越抓不住，不如放手。当你不再执着，反而有意想不到的收获。保持开放的心态，接受各种可能。"},
+ 6:{a:"做好准备，等待时机",d:"该等待",al:"可合作但保持独立",dt:"薛仁贵从伙头兵到元帅，靠的是真本事和关键时刻的勇气。你现在要做的就是做好准备，当机会来临时毫不犹豫地抓住它。"},
+ 7:{a:"退一步观察，暂不行动",d:"该等待",al:"宜独处",dt:"苏娘走难，处处受困。此时不宜冒进，退一步反而海阔天空。给自己一些时间和空间，重新审视局势。暂时的退让是为了更好地前进。"},
+ 8:{a:"稳扎稳打，继续积累",d:"该坚持",al:"可合作",dt:"松柏之茂在于根基深厚。你的积累终将有大用。不要急于求成，保持现有的节奏，时机成熟时自然水到渠成。"},
+ 9:{a:"保持正直，静待真相",d:"该等待",al:"宜独守正气",dt:"孔明点将，心中有数。你只需保持正直之心，真相自会大白。不用急于辩解或证明什么，时间会给你公正的答案。"},
+ 10:{a:"虚心等待，不必强求",d:"该等待",al:"宜独处静候",dt:"庞涓观阵，心存嫉妒。你身边可能也有不理解你的人，不必在意。像美玉一样，等待真正识货的人。四处奔走不如安静等待。"}};
+ if(m[l.id])return m[l.id];
+ if(l.level==="上签")return{a:"顺势而上，积极行动",d:"该争取",al:"宜借助贵人",dt:"此签为吉兆，你所求之事整体有利。建议你主动出击，把握眼前的机会。但同时要保持谦逊，尊重他人，以和为贵。"};
+ if(l.level==="下签")return{a:"保守谨慎，避其锋芒",d:"该放下",al:"宜独善其身",dt:"当前局势不宜进取，反而应该收缩防御。这不是懦弱，而是智慧。留得青山在，不怕没柴烧。等风云过后再图发展。"};
+ return{a:"稳中求进，顺势而为",d:"该调整",al:"可合作",dt:"此签为中平之兆，没有明显的大吉大凶。建议你稳扎稳打，不要冒进也不要退缩。根据实际情况灵活调整策略，保持平和的心态。"};}
+
+function gr(l){var m={1:{b:"过于自信，忽略细节",t:"误判时机已到",o:"缺乏方向感",tu:"找到明确的目标和方向"},
+ 2:{b:"因焦虑而放弃积累",t:"误以为时机永远不成熟",o:"外部环境的限制",tu:"自身能力的积累与提升"},
+ 3:{b:"用力过度，耗尽心力",t:"误判付出的方向",o:"资源有限，进度缓慢",tu:"调整方法，找到更高效的路径"},
+ 4:{b:"急于求成，忽视过程",t:"被表象迷惑",o:"过往的伤痕未完全愈合",tu:"时间是修复的最好良药"},
+ 5:{b:"目标太多，不够专注",t:"误以为努力必有回报",o:"缺乏真正的热情",tu:"找到内心真正渴望的事"},
+ 6:{b:"自我怀疑，低估能力",t:"将挫折归因于自己不够好",o:"缺乏展示才能的平台",tu:"关键的贵人赏识"},
+ 7:{b:"过度悲观，轻言放弃",t:"将暂时困难视为永久失败",o:"外部阻力远超预期",tu:"调整预期，降低目标，先求生存"},
+ 8:{b:"安于现状，缺乏突破",t:"误以为积累等于成就",o:"缺乏推陈出新的勇气",tu:"在稳固的基础上大胆创新"},
+ 9:{b:"过于理想化，低估人性复杂",t:"误以为正直就够了",o:"他人的误解与偏见",tu:"耐心沟通，用事实说话"},
+ 10:{b:"急于证明自己",t:"误以为需要迎合他人",o:"缺乏识货之人的平台",tu:"提升内在价值，而非外在包装"}};
+ if(m[l.id])return m[l.id];
+ if(l.level==="上签")return{b:"可能因好运而放松警惕",t:"误以为一切唾手可得",o:"潜在的竞争对手",tu:"保持谦逊和警惕，持续努力"};
+ if(l.level==="下签")return{b:"容易陷入消极情绪",t:"误判形势的严重性",o:"外部环境的阻力",tu:"在逆境中寻找成长的契机"};
+ return{b:"犹豫不决，错失良机",t:"对局势判断不够清晰",o:"缺乏明确的行动方向",tu:"明确优先级，做出选择"};}
+
+function gb(l){var m={1:["行动","方向"],2:["时间","耐心"],3:["坚持","方法"],4:["沟通","时间"],5:["放下","随缘"],6:["学习","等待"],7:["调整","退让"],8:["积累","创新"],9:["修心","正直"],10:["等待","修炼"]};
+ if(m[l.id])return m[l.id];if(l.level==="上签")return["行动","贵人"];if(l.level==="下签")return["等待","修心"];return["调整","沟通"];}
+
+function gl(l){var ls={钟离成道:"真正的成就来自内心的修炼和正直的品格。外在的顺境只是辅助，重要的是内在的道心。",
+ 苏秦不第:"失败不是终点，而是必经之路。苏秦落魄时妻子不理、嫂子不炊，但他没有放弃，最终佩六国相印。你的低谷只是暂时的。",
+ 董永遇仙:"孝心感天，善有善报。董永因孝行而感动上苍，获得天助。你的善良和坚持不会白费，上天自有安排。",
+ 玉莲会十朋:"真情能够跨越一切阻碍。钱玉莲与王十朋虽历经磨难，但最终团圆。真正的缘分经得起考验。",
+ 刘晨遇仙:"有心栽花花不开，无心插柳柳成荫。有时候放下执著，反而能得到意想不到的收获。",
+ 仁贵遇主:"是金子总会发光。薛仁贵三次投军只当伙头兵，但在关键时刻救驾立功，从此一飞冲天。不要因暂时的埋没而灰心。",
+ 苏娘走难:"人生难免有困顿之时，但随遇而安、保全自身，终有拨云见日的一天。暂时的退让不是软弱。",
+ 姚能遇仙:"松柏经冬不凋，君子历难不馁。你积累的品德和才能，终会在恰当的时机被重用。",
+ 孔明点将:"智慧源于沉着，力量来自正直。诸葛亮运筹帷幄，靠的是清晰的头脑和公正的心。保持内心明净，一切自有安排。",
+ 庞涓观阵:"嫉妒和算计害人害己。庞涓因嫉妒孙膑而设毒计，最终自己死于马陵道。与人为善才是长久之道。"};
+ return ls[l.name]||"每个典故都是一面镜子，照见人性的光辉与幽暗。你当前所面对的，正是这面镜子中映照出的课题。";}
+
+function st(m,d){if(!d)d=2000;var t=_("toast");t.textContent=m;t.classList.add("sh");setTimeout(function(){t.classList.remove("sh")},d)}
+function fd(d){return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日 星期"+"日一二三四五六"[d.getDay()]}
+function gds(){var d=new Date();return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
+
+function sp(id){
+ document.querySelectorAll(".page").forEach(function(p){p.classList.remove("act")});
+ _(id).classList.add("act");
+ var tn=_("tn");
+ if(id==="ph"){tn.classList.remove("vs")}else{
+  tn.classList.add("vs");
+  var ts={"prs":"签文详解","pr":"请签仪式","pd":"每日一签","pc":"我的签库","ph2":"抽签记录"};
+  _("nt").textContent=ts[id]||"观音灵签"
+ }
+ document.querySelectorAll(".bni").forEach(function(i){
+  i.classList.toggle("act",i.dataset.p===id.replace("p",""))
+ });
+ console.log("[导航] 切换到页面:",id);
+}
+
+function gc2(){try{return JSON.parse(localStorage.getItem("lc")||"[]")}catch(e){return[]}}
+function sc2(a){localStorage.setItem("lc",JSON.stringify(a))}
+function isv(id){return gc2().indexOf(id)>=0}
+function tsv(id){var c=gc2();var idx=c.indexOf(id);if(idx>=0){c.splice(idx,1);sc2(c);return false}c.push(id);sc2(c);return true}
+function usb(id){var b=_("sav");if(isv(id)){b.textContent="♥ 已收藏";b.classList.add("sv")}else{b.textContent="♡ 收藏";b.classList.remove("sv")}}
+function gh2(){try{return JSON.parse(localStorage.getItem("lh")||"[]")}catch(e){return[]}}
+function sh2(a){localStorage.setItem("lh",JSON.stringify(a))}
+function sh3(l,q){var h=gh2(),n=new Date();h.unshift({id:l.id,name:l.name,level:l.level,question:q||"",date:n.toISOString(),dateStr:fd(n)});if(h.length>200)h.length=200;sh2(h)}
+
+_("sb").addEventListener("click",function(){
+ console.log("[首页] 净手问签 按钮被点击");
+ cq="";sp("pr");
+ document.querySelectorAll(".rs").forEach(function(s){s.classList.remove("act")});
+ _("rs1").classList.add("act");
+ _("sc").classList.remove("shk","drp");
+ _("sr").style.display="none";
+ _("inlineResult").style.display="none";
+ _("inlineResult").innerHTML="";
+ console.log("[仪式] 进入静心步骤");
+});
+
+_("rn1").addEventListener("click",function(){
+ console.log("[仪式] 点击已静心 → 进入摇签");
+ _("rs1").classList.remove("act");
+ _("rs2").classList.add("act");
+});
+
+_("sc").addEventListener("click",function(){
+ if(this.classList.contains("shk")||this.classList.contains("drp")){console.log("[仪式] 签筒正在摇动，忽略点击");return}
+ console.log("[仪式] 点击签筒 → 开始摇签");
+ this.classList.add("shk");
+ var self=this;
+ setTimeout(function(){
+  self.classList.remove("shk");
+  self.classList.add("drp");
+  var i=Math.floor(Math.random()*D.length);
+  crs=D[i];
+  console.log("[仪式] 签已掉落: 第"+crs.id+"签 - "+crs.name);
+  setTimeout(function(){
+   _("srn").textContent="第"+crs.id+"签";
+   _("sr").style.display="block";
+   console.log("[仪式] 签号已显示");
+  },800);
+ },1500);
+});
+
+_("rr").addEventListener("click",function(){
+ if(!crs){console.log("[仪式] 尚未摇签，无法查看");return}
+ console.log("[仪式] 点击查看签意, 签号:",crs.id);
+ renderInlineResult(crs);
+ sh3(crs,cq);
+});
+
+function renderInlineResult(l){
+ console.log("[结果] 渲染内联结果, 签号:",l.id);
+ var ip=gi(l);
+ var lm={上签:"sg",中签:"zg",下签:"xg"};
+ _("inlineResult").style.display="block";
+ _("sr").style.display="none";
+ var hh="";
+ hh+='<div class="rr-card">';
+ hh+='<div class="rr-number">第'+l.id+'签</div>';
+ hh+='<div class="rr-level '+lm[l.level]+'">'+l.level+' '+l.palace+'</div>';
+ hh+='<div class="rr-name">'+l.name+'</div>';
+ hh+='<div class="rr-jiwen">'+l.jiwen+'</div>';
+ hh+='<div class="rr-jieyue">解曰：'+l.jieyue+'</div>';
+ hh+='<div class="rr-actions">';
+ hh+='<button class="bs" id="inlineSav" style="padding:10px 20px;font-size:13px">收藏</button>';
+ hh+='<button class="bs" onclick="resetAll()">重新求签</button>';
+ hh+='<button class="rb" id="inlineDetail" style="padding:10px 24px;font-size:13px">查看详解</button>';
+ hh+='</div></div>';
+ _("inlineResult").innerHTML=hh;
+ var sv=_("inlineSav");
+ sv.onclick=function(){
+  if(!crs)return;
+  var s=tsv(crs.id);
+  sv.textContent=s?"已收藏":"收藏";
+  sv.classList.toggle("sv",s);
+  st(s?"已收藏":"已取消收藏");
+ };
+ sv.textContent=isv(crs.id)?"已收藏":"收藏";
+ sv.classList.toggle("sv",isv(crs.id));
+ _("inlineDetail").onclick=function(){
+  if(crs){
+   console.log("[结果] 点击查看详解, 签号:",crs.id);
+   showDetailPage(crs);
+  }
+ };
+ console.log("[结果] 内联结果已显示");
+
+ setTimeout(function(){_("inlineResult").scrollIntoView({behavior:"smooth",block:"start"})},100);
+}
+
+function resetAll(){console.log("[导航] 返回首页");cq="";sp("ph");crs=null;}
+
+function showDetailPage(l){
+ sp("prs");
+ _("rn").textContent="第"+l.id+"签";
+ var lm={上签:"sg",中签:"zg",下签:"xg"};
+ _("rl").textContent=l.level+" "+l.palace;
+ _("rl").className="rl "+(lm[l.level]||"zg");
+ _("rnm").textContent=l.name;
+ _("rj").textContent=l.jiwen;
+ _("rp").textContent=l.poem;
+ _("rjy").textContent="解曰："+l.jieyue;
+ var ip=gi(l);
+ rmi(l,ip);
+ rns(l);
+ usb(l.id);
+ console.log("[结果] 详解页面已加载");
+}
+
+function rmi(l,ip){
+ var c=_("mi");
+ var fc={大吉:"dj",吉:"j",中平:"zp",小凶:"xx",凶:"x"};
+ var fcc=fc[ip.f2]||"zp";
+ var h="";
+ h+='<div class="is"><div class="il">签意总览</div><div class="ib" style="font-size:15px;font-weight:600;color:var(--k);letter-spacing:2px;margin-bottom:8px">'+ip.ov.s+'</div><div class="ib">'+ip.ov.d+'</div></div>';
+ h+='<div class="is"><div class="il">吉凶等级</div><span class="itg t'+fcc+'">'+ip.f2+'</span></div>';
+ h+='<div class="is"><div class="il">当前处境</div><div class="ib">'+ip.sg+'</div></div>';
+ h+='<div class="is"><div class="il">行动建议</div><div class="ib"><div style="margin-bottom:6px"><span style="color:var(--r);letter-spacing:2px">行动方向：</span>'+ip.ad.a+'</div><div style="margin-bottom:6px"><span style="color:var(--r);letter-spacing:2px">该主动还是等待：</span>'+ip.ad.d+'</div><div style="margin-bottom:6px"><span style="color:var(--r);letter-spacing:2px">该合作还是独行：</span>'+ip.ad.al+'</div><div>'+ip.ad.dt+'</div></div></div>';
+ h+='<div class="is"><div class="il">风险提醒</div><div class="ib"><div style="margin-bottom:4px">容易忽略的问题：'+ip.rk.b+'</div><div style="margin-bottom:4px">误判来源：'+ip.rk.t+'</div><div style="margin-bottom:4px">当前最大障碍：'+ip.rk.o+'</div><div>转机所在：'+ip.rk.tu+'</div></div></div>';
+ h+='<div class="is"><div class="il">真正的突破点</div><div class="ib"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">';
+ ip.bt.forEach(function(p){h+='<span style="display:inline-block;padding:4px 14px;background:var(--cd);border-radius:2px;font-size:13px;letter-spacing:2px;color:var(--kl)">'+p+'</span>'});
+ h+='</div></div></div>';
+ if(l.story&&l.name){
+  h+='<div class="is"><div class="il">典故启示</div><div class="ib">"'+l.name+'"这个典故告诉我们：'+gl(l)+'</div></div>';
+ }
+ c.innerHTML=h;
+}
+
+function rns(l){
+ var c=_("sc2");
+ if(!l.story){
+  c.innerHTML='<div class="pp" style="text-align:center;color:var(--kl);font-size:14px;letter-spacing:2px;padding:40px 24px"><div style="margin-bottom:12px">此签暂无明确典故记载</div><div style="font-size:13px">古本传世已久，签文已足为凭</div></div>';
+  return;
+ }
+ var ls=gl(l);
+ var h='<div class="scd"><div class="sct">故事 · '+l.name+'</div><div class="scb">';
+ var cs=l.story.replace(/[()（）]/g,"");
+ h+=cs.split("。").filter(function(s){return s.trim()}).join("。<br>");
+ h+='</div></div><div class="scd"><div class="sct">现实启示</div><div class="sch">'+ls+'</div></div>';
+ c.innerHTML=h;
+}
+
+document.querySelectorAll(".tb").forEach(function(b){
+ b.addEventListener("click",function(){
+  document.querySelectorAll(".tb").forEach(function(x){x.classList.remove("act")});
+  document.querySelectorAll(".tc").forEach(function(x){x.classList.remove("act")});
+  this.classList.add("act");
+  _(this.dataset.tab).classList.add("act");
+ });
+});
+
+_("sav").addEventListener("click",function(){
+ if(!crs)return;
+ var s=tsv(crs.id);
+ usb(crs.id);
+ st(s?"已收藏":"已取消收藏");
+});
+
+_("rdw").addEventListener("click",function(){resetAll()});
+
+_("shr").addEventListener("click",function(){
+ if(!crs)return;
+ var t="我求得了"+crs.level+"第"+crs.id+"签："+crs.name+"\\n"+crs.jiwen;
+ if(navigator.share){
+  navigator.share({title:"观音灵签",text:t}).catch(function(){});
+ }else{
+  navigator.clipboard.writeText(t).then(function(){st("已复制到剪贴板")}).catch(function(){st("分享暂不可用")});
+ }
+});
+
+function rc2(){
+ var l=_("cl"),c=gc2();
+ if(c.length===0){l.innerHTML='<div class="cem">签库空空如也<br>遇到有缘的签，记得收藏</div>';return}
+ var h="";
+ c.forEach(function(id){
+  var lot=D.find(function(d){return d.id===id});
+  if(!lot)return;
+  h+='<div class="ci" data-id="'+id+'"><div class="cin">第'+id+'签</div><div class="cnn">'+lot.name+'</div></div>';
+ });
+ l.innerHTML=h;
+ l.querySelectorAll(".ci").forEach(function(i){
+  i.addEventListener("click",function(){
+   var id=parseInt(this.dataset.id),lot=D.find(function(d){return d.id===id});
+   if(lot){crs=lot;cq="";showDetailPage(lot);}
+  });
+ });
+}
+
+function rh2(){
+ var l=_("hl"),h=gh2();
+ if(h.length===0){l.innerHTML='<div class="hem">尚未有过抽签记录<br>开始你的第一签吧</div>';return}
+ var h2="";
+ h.slice(0,100).forEach(function(x){
+  var dt=new Date(x.date);
+  h2+='<div class="hi" data-id="'+x.id+'"><div class="hin">第'+x.id+'签</div><div class="hiq">'+(x.question||"-")+'</div><div class="hid">'+(dt.getMonth()+1)+"/"+dt.getDate()+'</div></div>';
+ });
+ l.innerHTML=h2;
+ l.querySelectorAll(".hi").forEach(function(i){
+  i.addEventListener("click",function(){
+   var id=parseInt(this.dataset.id),lot=D.find(function(d){return d.id===id});
+   if(lot){crs=lot;cq="";showDetailPage(lot);}
+  });
+ });
+}
+
+function rd(){
+ var s=gds(),idx=s%100,lot=D[idx];
+ if(!lot)return;
+ _("ddt").textContent=fd(new Date());
+ _("dn").textContent="第"+lot.id+"签";
+ _("dnm").textContent=lot.name;
+ var ip=gi(lot);
+ _("drm").textContent=ip.ov.s;
+ window.__dl=lot;
+}
+
+_("ddtl").addEventListener("click",function(){
+ if(window.__dl){crs=window.__dl;cq="今日一签";showDetailPage(window.__dl);}
+});
+
+_("nb").addEventListener("click",function(){sp("ph")});
+_("nc").addEventListener("click",function(){rc2();sp("pc")});
+_("gd").addEventListener("click",function(){rd();sp("pd")});
+_("gh").addEventListener("click",function(){rh2();sp("ph2")});
+_("gc").addEventListener("click",function(){rc2();sp("pc")});
+_("stp").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+
+document.querySelectorAll(".bni").forEach(function(i){
+ i.addEventListener("click",function(){
+  var p=this.dataset.p;
+  if(p==="home")sp("ph");
+  else if(p==="daily"){rd();sp("pd")}
+  else if(p==="history"){rh2();sp("ph2")}
+  else if(p==="collection"){rc2();sp("pc")}
+ });
+});
+
+window.addEventListener("scroll",function(){
+ var b=_("stp");
+ if(window.scrollY>300)b.classList.add("vs");else b.classList.remove("vs");
+});
+
+document.addEventListener("DOMContentLoaded",function(){
+ console.log("[初始化] DOM加载完成");
+ setTimeout(function(){
+  var o=_("lo");
+  if(o){o.style.opacity="0";setTimeout(function(){o.classList.remove("act")},500)}
+ },800);
+ console.log("[初始化] 观音灵签 v2.0 — 100签数据已加载");
+ console.log("[初始化] 按钮ID检查:",{
+  sb:!!_("sb"),rn1:!!_("rn1"),sc:!!_("sc"),rr:!!_("rr"),
+  sav:!!_("sav"),rdw:!!_("rdw"),shr:!!_("shr"),
+  nb:!!_("nb"),nc:!!_("nc"),gd:!!_("gd"),gh:!!_("gh"),gc:!!_("gc"),
+  ddtl:!!_("ddtl"),stp:!!_("stp")
+ });
+});
+
+</script>
+</body>
+</html>
